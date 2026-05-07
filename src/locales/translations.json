@@ -1,0 +1,150 @@
+{
+    "appTitle": {
+        "en": "Investment Planner",
+        "th": "แผนการลงทุน"
+    },
+    "appDescription": {
+        "en": "Plan and track your investments",
+        "th": "วางแผนและติดตามการลงทุนของคุณ"
+    },
+    "heroHeadline": {
+        "en": "Take Control of Your Financial Future",
+        "th": "ควบคุมอนาคตทางการเงินของคุณ"
+    },
+    "heroSubtitle": {
+        "en": "Track portfolios, set goals, and grow your wealth — all in one place.",
+        "th": "ติดตามพอร์ตโฟลิโอ ตั้งเป้าหมาย และเพิ่มความมั่งคั่ง — ทุกอย่างในที่เดียว"
+    },
+    "getStarted": {
+        "en": "Get Started",
+        "th": "เริ่มต้นใช้งาน"
+    },
+    "learnMore": {
+        "en": "Learn More",
+        "th": "เรียนรู้เพิ่มเติม"
+    },
+    "featuresTitle": {
+        "en": "Everything You Need to Invest Smarter",
+        "th": "ทุกสิ่งที่คุณต้องการเพื่อลงทุนอย่างชาญฉลาด"
+    },
+    "feature1Title": {
+        "en": "Portfolio Tracking",
+        "th": "ติดตามพอร์ตโฟลิโอ"
+    },
+    "feature1Desc": {
+        "en": "Monitor all your assets in real time with a clear, unified dashboard.",
+        "th": "ติดตามสินทรัพย์ทั้งหมดแบบเรียลไทม์ด้วยแดชบอร์ดที่ชัดเจน"
+    },
+    "feature2Title": {
+        "en": "Goal Planning",
+        "th": "วางแผนเป้าหมาย"
+    },
+    "feature2Desc": {
+        "en": "Define financial goals and track your progress automatically.",
+        "th": "กำหนดเป้าหมายทางการเงินและติดตามความคืบหน้าโดยอัตโนมัติ"
+    },
+    "feature3Title": {
+        "en": "Risk Analysis",
+        "th": "วิเคราะห์ความเสี่ยง"
+    },
+    "feature3Desc": {
+        "en": "Understand and balance your exposure against different asset classes.",
+        "th": "ทำความเข้าใจและสมดุลความเสี่ยงในสินทรัพย์ประเภทต่างๆ"
+    },
+    "feature4Title": {
+        "en": "Smart Insights",
+        "th": "ข้อมูลเชิงลึก"
+    },
+    "feature4Desc": {
+        "en": "Get personalized recommendations based on your investment behavior.",
+        "th": "รับคำแนะนำส่วนตัวตามพฤติกรรมการลงทุนของคุณ"
+    },
+    "ctaTitle": {
+        "en": "Ready to Start Investing?",
+        "th": "พร้อมเริ่มลงทุนแล้วหรือยัง?"
+    },
+    "ctaSubtitle": {
+        "en": "Join thousands of investors who trust Investment Planner to grow their wealth.",
+        "th": "เข้าร่วมกับนักลงทุนหลายพันคนที่ไว้วางใจแผนการลงทุนเพื่อสร้างความมั่งคั่ง"
+    },
+    "footerRights": {
+        "en": "All rights reserved.",
+        "th": "สงวนลิขสิทธิ์ทั้งหมด"
+    },
+    "navHome": {
+        "en": "Home",
+        "th": "หน้าหลัก"
+    },
+    "navDCA": {
+        "en": "DCA Calculator",
+        "th": "คำนวณ DCA"
+    },
+    "dcaTitle": {
+        "en": "DCA Calculator",
+        "th": "เครื่องคำนวณ DCA"
+    },
+    "dcaSubtitle": {
+        "en": "Estimate your investment growth with dollar-cost averaging.",
+        "th": "ประมาณการเติบโตของการลงทุนด้วยวิธี DCA"
+    },
+    "dcaInputs": {
+        "en": "Inputs",
+        "th": "ข้อมูลนำเข้า"
+    },
+    "dcaStartAge": {
+        "en": "Start Age",
+        "th": "อายุเริ่มต้น"
+    },
+    "dcaEndAge": {
+        "en": "End Invest Age",
+        "th": "อายุสิ้นสุดการลงทุน"
+    },
+    "dcaTotalYears": {
+        "en": "Total Invest Years",
+        "th": "จำนวนปีที่ลงทุน"
+    },
+    "dcaAnnualReturn": {
+        "en": "Annual Return Rate (%)",
+        "th": "อัตราผลตอบแทนต่อปี (%)"
+    },
+    "dcaStartPrincipal": {
+        "en": "Starting Principal",
+        "th": "เงินลงทุนเริ่มต้น"
+    },
+    "dcaMonthlyCost": {
+        "en": "Monthly DCA Amount",
+        "th": "จำนวนเงิน DCA ต่อเดือน"
+    },
+    "dcaResults": {
+        "en": "Results",
+        "th": "ผลลัพธ์"
+    },
+    "dcaTotalPrincipal": {
+        "en": "Total Principal",
+        "th": "เงินต้นทั้งหมด"
+    },
+    "dcaTotalProfit": {
+        "en": "Total Profit",
+        "th": "กำไรทั้งหมด"
+    },
+    "dcaTotalBalance": {
+        "en": "Total Balance",
+        "th": "ยอดรวมทั้งหมด"
+    },
+    "dcaChartTitle": {
+        "en": "Balance Growth Over Years",
+        "th": "การเติบโตของยอดเงินตามปี"
+    },
+    "dcaChartBalance": {
+        "en": "Balance",
+        "th": "ยอดเงิน"
+    },
+    "dcaChartPrincipal": {
+        "en": "Principal",
+        "th": "เงินต้น"
+    },
+    "dcaYear": {
+        "en": "Year",
+        "th": "ปี"
+    }
+}
