@@ -43,6 +43,7 @@ const RETIRE_AGE_DEFAULT = "60";
 const ANNUAL_RETURN_DEFAULT = "7";
 const START_PRINCIPAL_DEFAULT = "100000";
 const MONTHLY_DCA_DEFAULT = "1000";
+const WITHDRAWAL_RATE_DEFAULT = "4";
 
 function StatCard({ label, value, color }: StatCardProps) {
     return (
@@ -68,6 +69,7 @@ export default function DCAPage() {
     const [annualReturn, setAnnualReturn] = useState(ANNUAL_RETURN_DEFAULT);
     const [startPrincipal, setStartPrincipal] = useState(START_PRINCIPAL_DEFAULT);
     const [monthlyDCA, setMonthlyDCA] = useState(MONTHLY_DCA_DEFAULT);
+    const [withdrawalRate, setWithdrawalRate] = useState(WITHDRAWAL_RATE_DEFAULT);
 
     const startAgeNum = parseFloat(startAge) || 0;
     const endAgeNum = parseFloat(endAge) || 0;
@@ -89,6 +91,10 @@ export default function DCAPage() {
         ),
         [startPrincipal, monthlyDCA, annualReturn, investYears, coastYears],
     );
+
+    const withdrawalRateNum = parseFloat(withdrawalRate) || 0;
+    const annualPassiveIncome = result.totalBalance * withdrawalRateNum / 100;
+    const monthlyPassiveIncome = annualPassiveIncome / 12;
 
     const chartData = useMemo(
         () => result.data.map((point) => ({ ...point, calendarYear: currentYear + point.year })),
@@ -186,6 +192,20 @@ export default function DCAPage() {
                                         slotProps={{ htmlInput: { min: 0 } }}
                                         fullWidth
                                     />
+
+                                    <Divider />
+
+                                    <TextField
+                                        label={t("dcaWithdrawalRate")}
+                                        type="number"
+                                        value={withdrawalRate}
+                                        onChange={(e) => setWithdrawalRate(e.target.value)}
+                                        slotProps={{
+                                            htmlInput: { min: 0, max: 100, step: 0.1 },
+                                            input: { endAdornment: <InputAdornment position="end">%</InputAdornment> },
+                                        }}
+                                        fullWidth
+                                    />
                                 </Stack>
                             </CardContent>
                         </Card>
@@ -273,6 +293,80 @@ export default function DCAPage() {
                                     </ResponsiveContainer>
                                 </CardContent>
                             </Card>
+
+                            {/* Passive Income */}
+                            <Box
+                                sx={{
+                                    borderRadius: 4,
+                                    overflow: "hidden",
+                                    background: (theme) =>
+                                        theme.palette.mode === "dark"
+                                            ? "linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%)"
+                                            : "linear-gradient(135deg, #d8f3dc 0%, #b7e4c7 100%)",
+                                }}
+                            >
+                                <Box sx={{ p: 3 }}>
+                                    <Stack
+                                        direction={{ xs: "column", sm: "row" }}
+                                        sx={{ alignItems: { sm: "center" }, justifyContent: "space-between", gap: 3 }}
+                                    >
+                                        {/* Left — main metric */}
+                                        <Box>
+                                            <Typography
+                                                variant="overline"
+                                                sx={{ color: "success.dark", fontWeight: 600, letterSpacing: 1.5 }}
+                                            >
+                                                {t("dcaPassiveIncomeTitle")}
+                                            </Typography>
+                                            <Typography
+                                                variant="h2"
+                                                sx={{ fontWeight: 800, color: "success.dark", lineHeight: 1.1, mt: 0.5 }}
+                                            >
+                                                {fmt(monthlyPassiveIncome)}
+                                            </Typography>
+                                            <Typography variant="body2" sx={{ color: "success.dark", opacity: 0.75, mt: 0.5 }}>
+                                                / {t("dcaMonthlyIncome").toLowerCase()}
+                                            </Typography>
+                                        </Box>
+
+                                        {/* Right — secondary metrics */}
+                                        <Stack spacing={2} sx={{ minWidth: 180 }}>
+                                            <Box
+                                                sx={{
+                                                    bgcolor: "rgba(255,255,255,0.35)",
+                                                    borderRadius: 2,
+                                                    px: 2,
+                                                    py: 1.5,
+                                                    backdropFilter: "blur(6px)",
+                                                }}
+                                            >
+                                                <Typography variant="caption" sx={{ color: "success.dark", opacity: 0.8 }}>
+                                                    {t("dcaAnnualIncome")}
+                                                </Typography>
+                                                <Typography variant="h6" sx={{ fontWeight: 700, color: "success.dark" }}>
+                                                    {fmt(annualPassiveIncome)}
+                                                </Typography>
+                                            </Box>
+                                            <Box
+                                                sx={{
+                                                    bgcolor: "rgba(255,255,255,0.35)",
+                                                    borderRadius: 2,
+                                                    px: 2,
+                                                    py: 1.5,
+                                                    backdropFilter: "blur(6px)",
+                                                }}
+                                            >
+                                                <Typography variant="caption" sx={{ color: "success.dark", opacity: 0.8 }}>
+                                                    {t("dcaTotalBalance")} @ {retireAgeNum}
+                                                </Typography>
+                                                <Typography variant="h6" sx={{ fontWeight: 700, color: "success.dark" }}>
+                                                    {fmt(result.totalBalance)}
+                                                </Typography>
+                                            </Box>
+                                        </Stack>
+                                    </Stack>
+                                </Box>
+                            </Box>
                         </Stack>
                     </Grid>
                 </Grid>

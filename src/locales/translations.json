@@ -158,5 +158,21 @@
     "dcaYear": {
         "en": "Year",
         "th": "ปี"
+    },
+    "dcaPassiveIncomeTitle": {
+        "en": "Expected Passive Income",
+        "th": "รายได้ Passive Income ที่คาดหวัง"
+    },
+    "dcaWithdrawalRate": {
+        "en": "Annual Withdrawal Rate (%)",
+        "th": "อัตราถอนต่อปี (%)"
+    },
+    "dcaMonthlyIncome": {
+        "en": "Monthly Passive Income",
+        "th": "รายได้ต่อเดือน"
+    },
+    "dcaAnnualIncome": {
+        "en": "Annual Passive Income",
+        "th": "รายได้ต่อปี"
     }
 }
