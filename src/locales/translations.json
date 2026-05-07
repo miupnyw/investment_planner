@@ -103,6 +103,18 @@
         "en": "Total Invest Years",
         "th": "จำนวนปีที่ลงทุน"
     },
+    "dcaRetireAge": {
+        "en": "Retire Age",
+        "th": "อายุเกษียณ"
+    },
+    "dcaEndInvestAge": {
+        "en": "End of Invest",
+        "th": "สิ้นสุดการลงทุน"
+    },
+    "dcaCoastYears": {
+        "en": "Coast Years",
+        "th": "ปีที่เงินทำงานเอง"
+    },
     "dcaAnnualReturn": {
         "en": "Annual Return Rate (%)",
         "th": "อัตราผลตอบแทนต่อปี (%)"

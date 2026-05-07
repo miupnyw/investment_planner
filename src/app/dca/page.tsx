@@ -21,6 +21,7 @@ import {
     CartesianGrid,
     Tooltip,
     Legend,
+    ReferenceLine,
     ResponsiveContainer,
 } from "recharts";
 import Navbar from "@/components/Navbar";
@@ -38,6 +39,7 @@ interface StatCardProps {
 
 const START_AGE_DEFAULT = "25";
 const END_AGE_DEFAULT = "40";
+const RETIRE_AGE_DEFAULT = "60";
 const ANNUAL_RETURN_DEFAULT = "7";
 const START_PRINCIPAL_DEFAULT = "100000";
 const MONTHLY_DCA_DEFAULT = "1000";
@@ -62,23 +64,30 @@ export default function DCAPage() {
 
     const [startAge, setStartAge] = useState(START_AGE_DEFAULT);
     const [endAge, setEndAge] = useState(END_AGE_DEFAULT);
+    const [retireAge, setRetireAge] = useState(RETIRE_AGE_DEFAULT);
     const [annualReturn, setAnnualReturn] = useState(ANNUAL_RETURN_DEFAULT);
     const [startPrincipal, setStartPrincipal] = useState(START_PRINCIPAL_DEFAULT);
     const [monthlyDCA, setMonthlyDCA] = useState(MONTHLY_DCA_DEFAULT);
+
     const startAgeNum = parseFloat(startAge) || 0;
     const endAgeNum = parseFloat(endAge) || 0;
-    const totalYears = Math.max(0, endAgeNum - startAgeNum);
+    const retireAgeNum = parseFloat(retireAge) || 0;
+    const investYears = Math.max(0, endAgeNum - startAgeNum);
+    const coastYears = Math.max(0, retireAgeNum - endAgeNum);
 
     const currentYear = new Date().getFullYear();
+    const coastStartYear = currentYear + investYears;
+    const retireYear = currentYear + Math.max(0, retireAgeNum - startAgeNum);
 
     const result = useMemo(
         () => computeDCA(
             parseFloat(startPrincipal) || 0,
             parseFloat(monthlyDCA) || 0,
             parseFloat(annualReturn) || 0,
-            totalYears,
+            investYears,
+            coastYears,
         ),
-        [startPrincipal, monthlyDCA, annualReturn, totalYears],
+        [startPrincipal, monthlyDCA, annualReturn, investYears, coastYears],
     );
 
     const chartData = useMemo(
@@ -126,8 +135,23 @@ export default function DCAPage() {
                                         fullWidth
                                     />
                                     <TextField
+                                        label={t("dcaRetireAge")}
+                                        type="number"
+                                        value={retireAge}
+                                        onChange={(e) => setRetireAge(e.target.value)}
+                                        slotProps={{ htmlInput: { min: 1, max: 100 } }}
+                                        fullWidth
+                                    />
+                                    <TextField
                                         label={t("dcaTotalYears")}
-                                        value={totalYears}
+                                        value={investYears}
+                                        slotProps={{ input: { readOnly: true } }}
+                                        fullWidth
+                                        sx={{ "& .MuiInputBase-input": { color: "text.secondary" } }}
+                                    />
+                                    <TextField
+                                        label={t("dcaCoastYears")}
+                                        value={coastYears}
                                         slotProps={{ input: { readOnly: true } }}
                                         fullWidth
                                         sx={{ "& .MuiInputBase-input": { color: "text.secondary" } }}
@@ -196,17 +220,14 @@ export default function DCAPage() {
                                     </Typography>
                                     <ResponsiveContainer width="100%" height={360}>
                                         <LineChart
-                                            data={result.data}
+                                            data={chartData}
                                             margin={{ top: 4, right: 24, left: 16, bottom: 4 }}
                                         >
                                             <CartesianGrid strokeDasharray="3 3" stroke="#e0e0e0" />
                                             <XAxis
-                                                dataKey="year"
-                                                label={{
-                                                    value: t("dcaYear"),
-                                                    position: "insideBottomRight",
-                                                    offset: -8,
-                                                }}
+                                                dataKey="calendarYear"
+                                                type="number"
+                                                domain={[currentYear, retireYear]}
                                             />
                                             <YAxis
                                                 tickFormatter={(v) => fmt(v)}
@@ -219,9 +240,17 @@ export default function DCAPage() {
                                                 }}
                                             />
                                             <Tooltip
-                                                formatter={(value: number) => fmt(value)}
-                                                labelFormatter={(label) => `${t("dcaYear")} ${label}`}
+                                                formatter={(value) => fmt(Number(value))}
+                                                labelFormatter={(label) => String(label)}
                                             />
+                                            {coastYears > 0 && (
+                                                <ReferenceLine
+                                                    x={coastStartYear}
+                                                    stroke="#ed6c02"
+                                                    strokeDasharray="4 4"
+                                                    label={{ value: t("dcaEndInvestAge"), fill: "#ed6c02", fontSize: 11, position: "insideTopRight" }}
+                                                />
+                                            )}
                                             <Legend />
                                             <Line
                                                 type="monotone"
