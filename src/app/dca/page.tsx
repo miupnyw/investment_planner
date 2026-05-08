@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import {
     Box,
     Card,
@@ -35,13 +35,38 @@ interface StatCardProps {
     color?: string;
 }
 
-const START_AGE_DEFAULT = "25";
-const END_AGE_DEFAULT = "40";
-const RETIRE_AGE_DEFAULT = "60";
-const ANNUAL_RETURN_DEFAULT = "7";
-const START_PRINCIPAL_DEFAULT = "100000";
-const MONTHLY_DCA_DEFAULT = "1000";
-const WITHDRAWAL_RATE_DEFAULT = "4";
+const LS_KEY = "dca_inputs";
+
+interface DCAInputs {
+    startAge: string;
+    endAge: string;
+    retireAge: string;
+    annualReturn: string;
+    startPrincipalTHB: string;
+    monthlyDCABase: string;
+    withdrawalRate: string;
+}
+
+const DEFAULTS: DCAInputs = {
+    startAge: "25",
+    endAge: "40",
+    retireAge: "60",
+    annualReturn: "7",
+    startPrincipalTHB: "100000",
+    monthlyDCABase: "1000",
+    withdrawalRate: "4",
+};
+
+function loadInputs(): DCAInputs {
+    if (typeof window === "undefined") return DEFAULTS;
+    try {
+        const raw = localStorage.getItem(LS_KEY);
+        if (!raw) return DEFAULTS;
+        return { ...DEFAULTS, ...JSON.parse(raw) };
+    } catch {
+        return DEFAULTS;
+    }
+}
 
 function StatCard({ label, value, color }: StatCardProps) {
     return (
@@ -62,14 +87,31 @@ export default function DCAPage() {
     const { t } = useLanguage();
     const { fmt, symbol, toTHB, toDisplay } = useCurrency();
 
-    const [startAge, setStartAge] = useState(START_AGE_DEFAULT);
-    const [endAge, setEndAge] = useState(END_AGE_DEFAULT);
-    const [retireAge, setRetireAge] = useState(RETIRE_AGE_DEFAULT);
-    const [annualReturn, setAnnualReturn] = useState(ANNUAL_RETURN_DEFAULT);
+    const [startAge, setStartAge] = useState(DEFAULTS.startAge);
+    const [endAge, setEndAge] = useState(DEFAULTS.endAge);
+    const [retireAge, setRetireAge] = useState(DEFAULTS.retireAge);
+    const [annualReturn, setAnnualReturn] = useState(DEFAULTS.annualReturn);
     // Monetary states stored in THB internally
-    const [startPrincipalTHB, setStartPrincipalTHB] = useState(START_PRINCIPAL_DEFAULT);
-    const [monthlyDCABase, setMonthlyDCABase] = useState(MONTHLY_DCA_DEFAULT);
-    const [withdrawalRate, setWithdrawalRate] = useState(WITHDRAWAL_RATE_DEFAULT);
+    const [startPrincipalTHB, setStartPrincipalTHB] = useState(DEFAULTS.startPrincipalTHB);
+    const [monthlyDCABase, setMonthlyDCABase] = useState(DEFAULTS.monthlyDCABase);
+    const [withdrawalRate, setWithdrawalRate] = useState(DEFAULTS.withdrawalRate);
+
+    // Restore saved inputs after mount — runs only on the client, avoiding SSR hydration mismatch
+    useEffect(() => {
+        const saved = loadInputs();
+        setStartAge(saved.startAge);
+        setEndAge(saved.endAge);
+        setRetireAge(saved.retireAge);
+        setAnnualReturn(saved.annualReturn);
+        setStartPrincipalTHB(saved.startPrincipalTHB);
+        setMonthlyDCABase(saved.monthlyDCABase);
+        setWithdrawalRate(saved.withdrawalRate);
+    }, []);
+
+    useEffect(() => {
+        const inputs: DCAInputs = { startAge, endAge, retireAge, annualReturn, startPrincipalTHB, monthlyDCABase, withdrawalRate };
+        localStorage.setItem(LS_KEY, JSON.stringify(inputs));
+    }, [startAge, endAge, retireAge, annualReturn, startPrincipalTHB, monthlyDCABase, withdrawalRate]);
 
     // Display values converted to selected currency for input fields
     const startPrincipalDisplay = startPrincipalTHB === ""
