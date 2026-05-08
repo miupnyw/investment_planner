@@ -30,6 +30,7 @@ const LANGUAGES: { code: Language; label: string }[] = [
 const NAV_LINKS = [
     { href: "/", labelKey: "navHome" },
     { href: "/dca", labelKey: "navDCA" },
+    { href: "/portfolio", labelKey: "navPortfolio" },
 ];
 
 export default function Navbar() {

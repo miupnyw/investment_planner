@@ -174,5 +174,117 @@
     "dcaAnnualIncome": {
         "en": "Annual Passive Income",
         "th": "รายได้ต่อปี"
+    },
+    "navPortfolio": {
+        "en": "Portfolio",
+        "th": "พอร์ตโฟลิโอ"
+    },
+    "portfolioTitle": {
+        "en": "Portfolio Planner",
+        "th": "วางแผนพอร์ตโฟลิโอ"
+    },
+    "portfolioName": {
+        "en": "Portfolio Name",
+        "th": "ชื่อพอร์ตโฟลิโอ"
+    },
+    "portfolioAddStock": {
+        "en": "Add Stock",
+        "th": "เพิ่มหุ้น"
+    },
+    "portfolioStockName": {
+        "en": "Stock / Ticker",
+        "th": "ชื่อหุ้น / Ticker"
+    },
+    "portfolioAmount": {
+        "en": "Shares",
+        "th": "จำนวนหุ้น"
+    },
+    "portfolioAvgCost": {
+        "en": "Avg Cost",
+        "th": "ต้นทุนเฉลี่ย"
+    },
+    "portfolioCurrentPrice": {
+        "en": "Current Price",
+        "th": "ราคาปัจจุบัน"
+    },
+    "portfolioValue": {
+        "en": "Value",
+        "th": "มูลค่า"
+    },
+    "portfolioPL": {
+        "en": "P&L",
+        "th": "กำไร/ขาดทุน"
+    },
+    "portfolioPLPct": {
+        "en": "P&L %",
+        "th": "% กำไร/ขาดทุน"
+    },
+    "portfolioWeight": {
+        "en": "Weight",
+        "th": "สัดส่วน"
+    },
+    "portfolioTotalBalance": {
+        "en": "Total Balance",
+        "th": "มูลค่ารวม"
+    },
+    "portfolioTotalCost": {
+        "en": "Total Cost",
+        "th": "ต้นทุนรวม"
+    },
+    "portfolioTotalPL": {
+        "en": "Total P&L",
+        "th": "กำไร/ขาดทุนรวม"
+    },
+    "portfolioAllocation": {
+        "en": "Allocation",
+        "th": "การจัดสรร"
+    },
+    "portfolioEmpty": {
+        "en": "Add a stock to get started.",
+        "th": "เพิ่มหุ้นเพื่อเริ่มต้น"
+    },
+    "portfolioAddPortfolio": {
+        "en": "Add Portfolio",
+        "th": "เพิ่มพอร์ตโฟลิโอ"
+    },
+    "portfolioNewPortfolio": {
+        "en": "New Portfolio",
+        "th": "พอร์ตโฟลิโอใหม่"
+    },
+    "portfolioModeTracker": {
+        "en": "Tracker",
+        "th": "ติดตาม"
+    },
+    "portfolioModePlanner": {
+        "en": "Planner",
+        "th": "วางแผน"
+    },
+    "portfolioPlanTotalInvestment": {
+        "en": "Total Investment",
+        "th": "เงินลงทุนรวม"
+    },
+    "portfolioTargetPct": {
+        "en": "Target %",
+        "th": "% เป้าหมาย"
+    },
+    "portfolioRequiredAmount": {
+        "en": "Required Amount",
+        "th": "จำนวนที่ต้องลงทุน"
+    },
+    "portfolioTotalPct": {
+        "en": "Total %",
+        "th": "% รวม"
+    },
+    "portfolioPlanEmpty": {
+        "en": "Add a stock to start planning.",
+        "th": "เพิ่มหุ้นเพื่อเริ่มวางแผน"
+    },
+    "portfolioFetchPrice": {
+        "en": "Fetch latest price",
+        "th": "ดึงราคาล่าสุด"
+    },
+    "portfolioPriceError": {
+        "en": "Symbol not found",
+        "th": "ไม่พบสัญลักษณ์หุ้น"
     }
 }
