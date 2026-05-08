@@ -10,6 +10,8 @@ import {
     MenuItem,
     SelectChangeEvent,
     Button,
+    ToggleButtonGroup,
+    ToggleButton,
 } from "@mui/material";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
@@ -18,6 +20,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "@/context/ThemeContext";
 import { useLanguage, Language } from "@/context/LanguageContext";
+import { useCurrency, Currency } from "@/context/CurrencyContext";
 
 const LANGUAGES: { code: Language; label: string }[] = [
     { code: "en", label: "EN" },
@@ -32,6 +35,7 @@ const NAV_LINKS = [
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
     const { t, language, setLanguage } = useLanguage();
+    const { currency, setCurrency } = useCurrency();
     const pathname = usePathname();
 
     return (
@@ -57,7 +61,17 @@ export default function Navbar() {
                     </Box>
                 </Box>
 
-                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                    <ToggleButtonGroup
+                        size="small"
+                        exclusive
+                        value={currency}
+                        onChange={(_e, val) => val && setCurrency(val as Currency)}
+                        sx={{ "& .MuiToggleButton-root": { px: 1.5, py: 0.5, fontSize: "0.75rem", fontWeight: 600 } }}
+                    >
+                        <ToggleButton value="THB">THB</ToggleButton>
+                        <ToggleButton value="USD">USD</ToggleButton>
+                    </ToggleButtonGroup>
                     <Select
                         size="small"
                         value={language}

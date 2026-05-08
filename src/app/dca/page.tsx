@@ -26,10 +26,8 @@ import {
 } from "recharts";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import { computeDCA } from "@/lib/dca";
-
-const fmt = (n: number) =>
-    new Intl.NumberFormat(undefined, { maximumFractionDigits: 0 }).format(n);
 
 interface StatCardProps {
     label: string;
@@ -62,14 +60,22 @@ function StatCard({ label, value, color }: StatCardProps) {
 
 export default function DCAPage() {
     const { t } = useLanguage();
+    const { fmt, symbol, toTHB, toDisplay } = useCurrency();
 
     const [startAge, setStartAge] = useState(START_AGE_DEFAULT);
     const [endAge, setEndAge] = useState(END_AGE_DEFAULT);
     const [retireAge, setRetireAge] = useState(RETIRE_AGE_DEFAULT);
     const [annualReturn, setAnnualReturn] = useState(ANNUAL_RETURN_DEFAULT);
-    const [startPrincipal, setStartPrincipal] = useState(START_PRINCIPAL_DEFAULT);
-    const [monthlyDCA, setMonthlyDCA] = useState(MONTHLY_DCA_DEFAULT);
+    // Monetary states stored in THB internally
+    const [startPrincipalTHB, setStartPrincipalTHB] = useState(START_PRINCIPAL_DEFAULT);
+    const [monthlyDCABase, setMonthlyDCABase] = useState(MONTHLY_DCA_DEFAULT);
     const [withdrawalRate, setWithdrawalRate] = useState(WITHDRAWAL_RATE_DEFAULT);
+
+    // Display values converted to selected currency for input fields
+    const startPrincipalDisplay = startPrincipalTHB === ""
+        ? "" : String(Math.round(toDisplay(parseFloat(startPrincipalTHB) || 0)));
+    const monthlyDCADisplay = monthlyDCABase === ""
+        ? "" : String(Math.round(toDisplay(parseFloat(monthlyDCABase) || 0)));
 
     const startAgeNum = parseFloat(startAge) || 0;
     const endAgeNum = parseFloat(endAge) || 0;
@@ -83,13 +89,13 @@ export default function DCAPage() {
 
     const result = useMemo(
         () => computeDCA(
-            parseFloat(startPrincipal) || 0,
-            parseFloat(monthlyDCA) || 0,
+            parseFloat(startPrincipalTHB) || 0,
+            parseFloat(monthlyDCABase) || 0,
             parseFloat(annualReturn) || 0,
             investYears,
             coastYears,
         ),
-        [startPrincipal, monthlyDCA, annualReturn, investYears, coastYears],
+        [startPrincipalTHB, monthlyDCABase, annualReturn, investYears, coastYears],
     );
 
     const withdrawalRateNum = parseFloat(withdrawalRate) || 0;
@@ -179,17 +185,29 @@ export default function DCAPage() {
                                     <TextField
                                         label={t("dcaStartPrincipal")}
                                         type="number"
-                                        value={startPrincipal}
-                                        onChange={(e) => setStartPrincipal(e.target.value)}
-                                        slotProps={{ htmlInput: { min: 0 } }}
+                                        value={startPrincipalDisplay}
+                                        onChange={(e) => {
+                                            const raw = e.target.value;
+                                            setStartPrincipalTHB(raw === "" ? "" : String(Math.round(toTHB(parseFloat(raw) || 0))));
+                                        }}
+                                        slotProps={{
+                                            htmlInput: { min: 0 },
+                                            input: { startAdornment: <InputAdornment position="start">{symbol}</InputAdornment> },
+                                        }}
                                         fullWidth
                                     />
                                     <TextField
                                         label={t("dcaMonthlyCost")}
                                         type="number"
-                                        value={monthlyDCA}
-                                        onChange={(e) => setMonthlyDCA(e.target.value)}
-                                        slotProps={{ htmlInput: { min: 0 } }}
+                                        value={monthlyDCADisplay}
+                                        onChange={(e) => {
+                                            const raw = e.target.value;
+                                            setMonthlyDCABase(raw === "" ? "" : String(Math.round(toTHB(parseFloat(raw) || 0))));
+                                        }}
+                                        slotProps={{
+                                            htmlInput: { min: 0 },
+                                            input: { startAdornment: <InputAdornment position="start">{symbol}</InputAdornment> },
+                                        }}
                                         fullWidth
                                     />
 
