@@ -9,15 +9,15 @@ const listeners = new Set<() => void>();
  * other tabs (via the native "storage" event). Designed for useSyncExternalStore.
  */
 export function subscribeStorage(callback: () => void) {
-    listeners.add(callback);
-    window.addEventListener("storage", callback);
-    return () => {
-        listeners.delete(callback);
-        window.removeEventListener("storage", callback);
-    };
+  listeners.add(callback);
+  window.addEventListener("storage", callback);
+  return () => {
+    listeners.delete(callback);
+    window.removeEventListener("storage", callback);
+  };
 }
 
 /** Notify same-tab subscribers after writing to localStorage. */
 export function notifyStorage() {
-    for (const listener of listeners) listener();
+  for (const listener of listeners) listener();
 }

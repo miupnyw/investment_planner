@@ -1,290 +1,646 @@
 {
-    "appTitle": {
-        "en": "Investment Planner",
-        "th": "แผนการลงทุน"
-    },
-    "appDescription": {
-        "en": "Plan and track your investments",
-        "th": "วางแผนและติดตามการลงทุนของคุณ"
-    },
-    "heroHeadline": {
-        "en": "Take Control of Your Financial Future",
-        "th": "ควบคุมอนาคตทางการเงินของคุณ"
-    },
-    "heroSubtitle": {
-        "en": "Track portfolios, set goals, and grow your wealth — all in one place.",
-        "th": "ติดตามพอร์ตโฟลิโอ ตั้งเป้าหมาย และเพิ่มความมั่งคั่ง — ทุกอย่างในที่เดียว"
-    },
-    "getStarted": {
-        "en": "Get Started",
-        "th": "เริ่มต้นใช้งาน"
-    },
-    "learnMore": {
-        "en": "Learn More",
-        "th": "เรียนรู้เพิ่มเติม"
-    },
-    "featuresTitle": {
-        "en": "Everything You Need to Invest Smarter",
-        "th": "ทุกสิ่งที่คุณต้องการเพื่อลงทุนอย่างชาญฉลาด"
-    },
-    "feature1Title": {
-        "en": "Portfolio Tracking",
-        "th": "ติดตามพอร์ตโฟลิโอ"
-    },
-    "feature1Desc": {
-        "en": "Monitor all your assets in real time with a clear, unified dashboard.",
-        "th": "ติดตามสินทรัพย์ทั้งหมดแบบเรียลไทม์ด้วยแดชบอร์ดที่ชัดเจน"
-    },
-    "feature2Title": {
-        "en": "Goal Planning",
-        "th": "วางแผนเป้าหมาย"
-    },
-    "feature2Desc": {
-        "en": "Define financial goals and track your progress automatically.",
-        "th": "กำหนดเป้าหมายทางการเงินและติดตามความคืบหน้าโดยอัตโนมัติ"
-    },
-    "feature3Title": {
-        "en": "Risk Analysis",
-        "th": "วิเคราะห์ความเสี่ยง"
-    },
-    "feature3Desc": {
-        "en": "Understand and balance your exposure against different asset classes.",
-        "th": "ทำความเข้าใจและสมดุลความเสี่ยงในสินทรัพย์ประเภทต่างๆ"
-    },
-    "feature4Title": {
-        "en": "Smart Insights",
-        "th": "ข้อมูลเชิงลึก"
-    },
-    "feature4Desc": {
-        "en": "Get personalized recommendations based on your investment behavior.",
-        "th": "รับคำแนะนำส่วนตัวตามพฤติกรรมการลงทุนของคุณ"
-    },
-    "ctaTitle": {
-        "en": "Ready to Start Investing?",
-        "th": "พร้อมเริ่มลงทุนแล้วหรือยัง?"
-    },
-    "ctaSubtitle": {
-        "en": "Join thousands of investors who trust Investment Planner to grow their wealth.",
-        "th": "เข้าร่วมกับนักลงทุนหลายพันคนที่ไว้วางใจแผนการลงทุนเพื่อสร้างความมั่งคั่ง"
-    },
-    "footerRights": {
-        "en": "All rights reserved.",
-        "th": "สงวนลิขสิทธิ์ทั้งหมด"
-    },
-    "navHome": {
-        "en": "Home",
-        "th": "หน้าหลัก"
-    },
-    "navDCA": {
-        "en": "DCA Calculator",
-        "th": "คำนวณ DCA"
-    },
-    "dcaTitle": {
-        "en": "DCA Calculator",
-        "th": "เครื่องคำนวณ DCA"
-    },
-    "dcaSubtitle": {
-        "en": "Estimate your investment growth with dollar-cost averaging.",
-        "th": "ประมาณการเติบโตของการลงทุนด้วยวิธี DCA"
-    },
-    "dcaInputs": {
-        "en": "Inputs",
-        "th": "ข้อมูลนำเข้า"
-    },
-    "dcaStartAge": {
-        "en": "Start Age",
-        "th": "อายุเริ่มต้น"
-    },
-    "dcaEndAge": {
-        "en": "End Invest Age",
-        "th": "อายุสิ้นสุดการลงทุน"
-    },
-    "dcaTotalYears": {
-        "en": "Total Invest Years",
-        "th": "จำนวนปีที่ลงทุน"
-    },
-    "dcaRetireAge": {
-        "en": "Retire Age",
-        "th": "อายุเกษียณ"
-    },
-    "dcaEndInvestAge": {
-        "en": "End of Invest",
-        "th": "สิ้นสุดการลงทุน"
-    },
-    "dcaCoastYears": {
-        "en": "Coast Years",
-        "th": "ปีที่เงินทำงานเอง"
-    },
-    "dcaAnnualReturn": {
-        "en": "Annual Return Rate (%)",
-        "th": "อัตราผลตอบแทนต่อปี (%)"
-    },
-    "dcaStartPrincipal": {
-        "en": "Starting Principal",
-        "th": "เงินลงทุนเริ่มต้น"
-    },
-    "dcaMonthlyCost": {
-        "en": "Monthly DCA Amount",
-        "th": "จำนวนเงิน DCA ต่อเดือน"
-    },
-    "dcaResults": {
-        "en": "Results",
-        "th": "ผลลัพธ์"
-    },
-    "dcaTotalPrincipal": {
-        "en": "Total Principal",
-        "th": "เงินต้นทั้งหมด"
-    },
-    "dcaTotalProfit": {
-        "en": "Total Profit",
-        "th": "กำไรทั้งหมด"
-    },
-    "dcaTotalBalance": {
-        "en": "Total Balance",
-        "th": "ยอดรวมทั้งหมด"
-    },
-    "dcaChartTitle": {
-        "en": "Balance Growth Over Years",
-        "th": "การเติบโตของยอดเงินตามปี"
-    },
-    "dcaChartBalance": {
-        "en": "Balance",
-        "th": "ยอดเงิน"
-    },
-    "dcaChartPrincipal": {
-        "en": "Principal",
-        "th": "เงินต้น"
-    },
-    "dcaYear": {
-        "en": "Year",
-        "th": "ปี"
-    },
-    "dcaPassiveIncomeTitle": {
-        "en": "Expected Passive Income",
-        "th": "รายได้ Passive Income ที่คาดหวัง"
-    },
-    "dcaWithdrawalRate": {
-        "en": "Annual Withdrawal Rate (%)",
-        "th": "อัตราถอนต่อปี (%)"
-    },
-    "dcaMonthlyIncome": {
-        "en": "Monthly Passive Income",
-        "th": "รายได้ต่อเดือน"
-    },
-    "dcaAnnualIncome": {
-        "en": "Annual Passive Income",
-        "th": "รายได้ต่อปี"
-    },
-    "navPortfolio": {
-        "en": "Portfolio",
-        "th": "พอร์ตโฟลิโอ"
-    },
-    "portfolioTitle": {
-        "en": "Portfolio Planner",
-        "th": "วางแผนพอร์ตโฟลิโอ"
-    },
-    "portfolioName": {
-        "en": "Portfolio Name",
-        "th": "ชื่อพอร์ตโฟลิโอ"
-    },
-    "portfolioAddStock": {
-        "en": "Add Stock",
-        "th": "เพิ่มหุ้น"
-    },
-    "portfolioStockName": {
-        "en": "Stock / Ticker",
-        "th": "ชื่อหุ้น / Ticker"
-    },
-    "portfolioAmount": {
-        "en": "Shares",
-        "th": "จำนวนหุ้น"
-    },
-    "portfolioAvgCost": {
-        "en": "Avg Cost",
-        "th": "ต้นทุนเฉลี่ย"
-    },
-    "portfolioCurrentPrice": {
-        "en": "Current Price",
-        "th": "ราคาปัจจุบัน"
-    },
-    "portfolioValue": {
-        "en": "Value",
-        "th": "มูลค่า"
-    },
-    "portfolioPL": {
-        "en": "P&L",
-        "th": "กำไร/ขาดทุน"
-    },
-    "portfolioPLPct": {
-        "en": "P&L %",
-        "th": "% กำไร/ขาดทุน"
-    },
-    "portfolioWeight": {
-        "en": "Weight",
-        "th": "สัดส่วน"
-    },
-    "portfolioTotalBalance": {
-        "en": "Total Balance",
-        "th": "มูลค่ารวม"
-    },
-    "portfolioTotalCost": {
-        "en": "Total Cost",
-        "th": "ต้นทุนรวม"
-    },
-    "portfolioTotalPL": {
-        "en": "Total P&L",
-        "th": "กำไร/ขาดทุนรวม"
-    },
-    "portfolioAllocation": {
-        "en": "Allocation",
-        "th": "การจัดสรร"
-    },
-    "portfolioEmpty": {
-        "en": "Add a stock to get started.",
-        "th": "เพิ่มหุ้นเพื่อเริ่มต้น"
-    },
-    "portfolioAddPortfolio": {
-        "en": "Add Portfolio",
-        "th": "เพิ่มพอร์ตโฟลิโอ"
-    },
-    "portfolioNewPortfolio": {
-        "en": "New Portfolio",
-        "th": "พอร์ตโฟลิโอใหม่"
-    },
-    "portfolioModeTracker": {
-        "en": "Tracker",
-        "th": "ติดตาม"
-    },
-    "portfolioModePlanner": {
-        "en": "Planner",
-        "th": "วางแผน"
-    },
-    "portfolioPlanTotalInvestment": {
-        "en": "Total Investment",
-        "th": "เงินลงทุนรวม"
-    },
-    "portfolioTargetPct": {
-        "en": "Target %",
-        "th": "% เป้าหมาย"
-    },
-    "portfolioRequiredAmount": {
-        "en": "Required Amount",
-        "th": "จำนวนที่ต้องลงทุน"
-    },
-    "portfolioTotalPct": {
-        "en": "Total %",
-        "th": "% รวม"
-    },
-    "portfolioPlanEmpty": {
-        "en": "Add a stock to start planning.",
-        "th": "เพิ่มหุ้นเพื่อเริ่มวางแผน"
-    },
-    "portfolioFetchPrice": {
-        "en": "Fetch latest price",
-        "th": "ดึงราคาล่าสุด"
-    },
-    "portfolioPriceError": {
-        "en": "Symbol not found",
-        "th": "ไม่พบสัญลักษณ์หุ้น"
-    }
+  "appTitle": {
+    "en": "Investment Planner",
+    "th": "แผนการลงทุน"
+  },
+  "appDescription": {
+    "en": "Plan and track your investments",
+    "th": "วางแผนและติดตามการลงทุนของคุณ"
+  },
+  "heroHeadline": {
+    "en": "Take Control of Your Financial Future",
+    "th": "ควบคุมอนาคตทางการเงินของคุณ"
+  },
+  "heroSubtitle": {
+    "en": "Track portfolios, set goals, and grow your wealth — all in one place.",
+    "th": "ติดตามพอร์ตโฟลิโอ ตั้งเป้าหมาย และเพิ่มความมั่งคั่ง — ทุกอย่างในที่เดียว"
+  },
+  "getStarted": {
+    "en": "Get Started",
+    "th": "เริ่มต้นใช้งาน"
+  },
+  "learnMore": {
+    "en": "Learn More",
+    "th": "เรียนรู้เพิ่มเติม"
+  },
+  "featuresTitle": {
+    "en": "Everything You Need to Invest Smarter",
+    "th": "ทุกสิ่งที่คุณต้องการเพื่อลงทุนอย่างชาญฉลาด"
+  },
+  "feature1Title": {
+    "en": "Portfolio Tracking",
+    "th": "ติดตามพอร์ตโฟลิโอ"
+  },
+  "feature1Desc": {
+    "en": "Monitor all your assets in real time with a clear, unified dashboard.",
+    "th": "ติดตามสินทรัพย์ทั้งหมดแบบเรียลไทม์ด้วยแดชบอร์ดที่ชัดเจน"
+  },
+  "feature2Title": {
+    "en": "Goal Planning",
+    "th": "วางแผนเป้าหมาย"
+  },
+  "feature2Desc": {
+    "en": "Define financial goals and track your progress automatically.",
+    "th": "กำหนดเป้าหมายทางการเงินและติดตามความคืบหน้าโดยอัตโนมัติ"
+  },
+  "feature3Title": {
+    "en": "Risk Analysis",
+    "th": "วิเคราะห์ความเสี่ยง"
+  },
+  "feature3Desc": {
+    "en": "Understand and balance your exposure against different asset classes.",
+    "th": "ทำความเข้าใจและสมดุลความเสี่ยงในสินทรัพย์ประเภทต่างๆ"
+  },
+  "feature4Title": {
+    "en": "Smart Insights",
+    "th": "ข้อมูลเชิงลึก"
+  },
+  "feature4Desc": {
+    "en": "Get personalized recommendations based on your investment behavior.",
+    "th": "รับคำแนะนำส่วนตัวตามพฤติกรรมการลงทุนของคุณ"
+  },
+  "ctaTitle": {
+    "en": "Ready to Start Investing?",
+    "th": "พร้อมเริ่มลงทุนแล้วหรือยัง?"
+  },
+  "ctaSubtitle": {
+    "en": "Join thousands of investors who trust Investment Planner to grow their wealth.",
+    "th": "เข้าร่วมกับนักลงทุนหลายพันคนที่ไว้วางใจแผนการลงทุนเพื่อสร้างความมั่งคั่ง"
+  },
+  "footerRights": {
+    "en": "All rights reserved.",
+    "th": "สงวนลิขสิทธิ์ทั้งหมด"
+  },
+  "navHome": {
+    "en": "Home",
+    "th": "หน้าหลัก"
+  },
+  "navDCA": {
+    "en": "DCA Calculator",
+    "th": "คำนวณ DCA"
+  },
+  "dcaTitle": {
+    "en": "DCA Calculator",
+    "th": "เครื่องคำนวณ DCA"
+  },
+  "dcaSubtitle": {
+    "en": "Estimate your investment growth with dollar-cost averaging.",
+    "th": "ประมาณการเติบโตของการลงทุนด้วยวิธี DCA"
+  },
+  "dcaInputs": {
+    "en": "Inputs",
+    "th": "ข้อมูลนำเข้า"
+  },
+  "dcaStartAge": {
+    "en": "Start Age",
+    "th": "อายุเริ่มต้น"
+  },
+  "dcaEndAge": {
+    "en": "End Invest Age",
+    "th": "อายุสิ้นสุดการลงทุน"
+  },
+  "dcaTotalYears": {
+    "en": "Total Invest Years",
+    "th": "จำนวนปีที่ลงทุน"
+  },
+  "dcaRetireAge": {
+    "en": "Retire Age",
+    "th": "อายุเกษียณ"
+  },
+  "dcaEndInvestAge": {
+    "en": "End of Invest",
+    "th": "สิ้นสุดการลงทุน"
+  },
+  "dcaCoastYears": {
+    "en": "Coast Years",
+    "th": "ปีที่เงินทำงานเอง"
+  },
+  "dcaAnnualReturn": {
+    "en": "Annual Return Rate (%)",
+    "th": "อัตราผลตอบแทนต่อปี (%)"
+  },
+  "dcaStartPrincipal": {
+    "en": "Starting Principal",
+    "th": "เงินลงทุนเริ่มต้น"
+  },
+  "dcaMonthlyCost": {
+    "en": "Monthly DCA Amount",
+    "th": "จำนวนเงิน DCA ต่อเดือน"
+  },
+  "dcaResults": {
+    "en": "Results",
+    "th": "ผลลัพธ์"
+  },
+  "dcaTotalPrincipal": {
+    "en": "Total Principal",
+    "th": "เงินต้นทั้งหมด"
+  },
+  "dcaTotalProfit": {
+    "en": "Total Profit",
+    "th": "กำไรทั้งหมด"
+  },
+  "dcaTotalBalance": {
+    "en": "Total Balance",
+    "th": "ยอดรวมทั้งหมด"
+  },
+  "dcaChartTitle": {
+    "en": "Balance Growth Over Years",
+    "th": "การเติบโตของยอดเงินตามปี"
+  },
+  "dcaChartBalance": {
+    "en": "Balance",
+    "th": "ยอดเงิน"
+  },
+  "dcaChartPrincipal": {
+    "en": "Principal",
+    "th": "เงินต้น"
+  },
+  "dcaYear": {
+    "en": "Year",
+    "th": "ปี"
+  },
+  "dcaPassiveIncomeTitle": {
+    "en": "Expected Passive Income",
+    "th": "รายได้ Passive Income ที่คาดหวัง"
+  },
+  "dcaWithdrawalRate": {
+    "en": "Annual Withdrawal Rate (%)",
+    "th": "อัตราถอนต่อปี (%)"
+  },
+  "dcaMonthlyIncome": {
+    "en": "Monthly Passive Income",
+    "th": "รายได้ต่อเดือน"
+  },
+  "dcaAnnualIncome": {
+    "en": "Annual Passive Income",
+    "th": "รายได้ต่อปี"
+  },
+  "navTax": {
+    "en": "Tax Calculator",
+    "th": "คำนวณภาษี"
+  },
+  "taxTitle": {
+    "en": "Thailand Income Tax 2569",
+    "th": "ภาษีเงินได้บุคคลธรรมดา 2569"
+  },
+  "taxSubtitle": {
+    "en": "Estimate your personal income tax based on Thailand 2569 (2026) brackets and deductions.",
+    "th": "คำนวณภาษีเงินได้บุคคลธรรมดาตามอัตราและค่าลดหย่อนของปี 2569"
+  },
+  "taxInputs": {
+    "en": "Income & Deductions",
+    "th": "รายได้และค่าลดหย่อน"
+  },
+  "taxAnnualIncome": {
+    "en": "Annual Income",
+    "th": "รายได้ต่อปี"
+  },
+  "taxIncomeNote": {
+    "en": "Note",
+    "th": "หมายเหตุ"
+  },
+  "taxIncomeNotePlaceholder": {
+    "en": "e.g. Salary, Freelance",
+    "th": "เช่น เงินเดือน, รับจ้าง"
+  },
+  "taxIncomeAmount": {
+    "en": "Amount",
+    "th": "จำนวนเงิน"
+  },
+  "taxIncomeAdd": {
+    "en": "Add income",
+    "th": "เพิ่มรายได้"
+  },
+  "taxIncomeRemove": {
+    "en": "Remove",
+    "th": "ลบ"
+  },
+  "taxIncomeTotal": {
+    "en": "Total",
+    "th": "รวม"
+  },
+  "taxSectionFamily": {
+    "en": "Personal & Family",
+    "th": "ส่วนตัวและครอบครัว"
+  },
+  "taxHasSpouse": {
+    "en": "Spouse (registered, no income)",
+    "th": "คู่สมรส (จดทะเบียน, ไม่มีรายได้)"
+  },
+  "taxNumChildren": {
+    "en": "Number of Children",
+    "th": "จำนวนบุตร"
+  },
+  "taxChildHelper": {
+    "en": "30,000 THB per child",
+    "th": "30,000 บาทต่อบุตร 1 คน"
+  },
+  "taxNumChildren2ndPlus": {
+    "en": "2nd+ Children born from 2018",
+    "th": "บุตรคนที่ 2 ขึ้นไป เกิดตั้งแต่ปี 2561"
+  },
+  "taxChildren2ndPlusHelper": {
+    "en": "Extra 30,000 THB each (total 60,000 per child)",
+    "th": "ลดหย่อนเพิ่มอีก 30,000 บาท (รวมเป็น 60,000 บาทต่อคน)"
+  },
+  "taxPregnancy": {
+    "en": "Pregnancy & Childbirth Expenses",
+    "th": "ค่าฝากครรภ์และคลอดบุตร"
+  },
+  "taxPregnancyHelper": {
+    "en": "Actual cost, max 60,000 THB",
+    "th": "ตามจ่ายจริง สูงสุด 60,000 บาท"
+  },
+  "taxNumParents": {
+    "en": "Number of Parents (max 4)",
+    "th": "จำนวนบิดา/มารดา (สูงสุด 4)"
+  },
+  "taxParentHelper": {
+    "en": "30,000 THB each — age 60+, income < 30,000/yr (yours + spouse's, max 4)",
+    "th": "30,000 บาทต่อคน — อายุ 60 ปีขึ้นไป รายได้ไม่เกิน 30,000 บาท/ปี (รวมของคู่สมรส สูงสุด 4 คน)"
+  },
+  "taxNumDisabled": {
+    "en": "Disabled / Incapacitated Dependents",
+    "th": "ผู้พิการหรือทุพพลภาพในความอุปการะ"
+  },
+  "taxDisabledHelper": {
+    "en": "60,000 THB per person",
+    "th": "60,000 บาทต่อคน"
+  },
+  "taxSectionDonations": {
+    "en": "Home Loan & Donations",
+    "th": "ดอกเบี้ยบ้านและเงินบริจาค"
+  },
+  "taxHomeLoan": {
+    "en": "Home Loan Interest",
+    "th": "ดอกเบี้ยกู้ยืมเพื่อที่อยู่อาศัย"
+  },
+  "taxHomeLoanHelper": {
+    "en": "Actual cost, max 100,000 THB",
+    "th": "ตามจ่ายจริง สูงสุด 100,000 บาท"
+  },
+  "taxEduDonation": {
+    "en": "Education / Sport / Gov't Hospital Donation",
+    "th": "บริจาคเพื่อการศึกษา กีฬา โรงพยาบาลรัฐ"
+  },
+  "taxEduDonationHelper": {
+    "en": "Counted at 2× actual, combined donations max 10% of net income",
+    "th": "นับ 2 เท่าของยอดบริจาค รวมบริจาคทั้งหมดไม่เกิน 10% ของเงินได้สุทธิ"
+  },
+  "taxGeneralDonation": {
+    "en": "General Donation",
+    "th": "เงินบริจาคทั่วไป"
+  },
+  "taxGeneralDonationHelper": {
+    "en": "Actual amount, combined donations max 10% of net income",
+    "th": "ตามจ่ายจริง รวมบริจาคทั้งหมดไม่เกิน 10% ของเงินได้สุทธิ"
+  },
+  "taxDonationCapLabel": {
+    "en": "max",
+    "th": "สูงสุด"
+  },
+  "taxInsurance": {
+    "en": "Insurance",
+    "th": "ประกัน"
+  },
+  "taxSocialSecurity": {
+    "en": "Social Security",
+    "th": "เงินสมทบประกันสังคม"
+  },
+  "taxSocSecHelper": {
+    "en": "Max 9,000 THB/year",
+    "th": "สูงสุด 9,000 บาท/ปี"
+  },
+  "taxLifeInsurance": {
+    "en": "Life Insurance (10+ yr policy)",
+    "th": "ประกันชีวิต (คุ้มครอง 10 ปีขึ้นไป)"
+  },
+  "taxLifeInsHelper": {
+    "en": "Max 100,000 THB (combined with health insurance ≤ 100,000)",
+    "th": "สูงสุด 100,000 บาท (รวมประกันสุขภาพแล้วไม่เกิน 100,000 บาท)"
+  },
+  "taxHealthInsurance": {
+    "en": "Health Insurance",
+    "th": "ประกันสุขภาพ"
+  },
+  "taxHealthInsHelper": {
+    "en": "Max 25,000 THB (combined with life insurance ≤ 100,000)",
+    "th": "สูงสุด 25,000 บาท (รวมประกันชีวิตแล้วไม่เกิน 100,000 บาท)"
+  },
+  "taxPensionInsurance": {
+    "en": "Pension Insurance",
+    "th": "ประกันชีวิตแบบบำนาญ"
+  },
+  "taxPensionInsHelper": {
+    "en": "15% of income, max 200,000 THB — can fill unused life insurance gap (up to 300,000 total)",
+    "th": "15% ของรายได้ สูงสุด 200,000 บาท — สามารถโปะส่วนที่ยังไม่ใช้จากประกันชีวิตได้ (รวมสูงสุด 300,000 บาท)"
+  },
+  "taxFunds": {
+    "en": "Retirement Funds (pension + RMF combined ≤ 500,000)",
+    "th": "กองทุนเพื่อการเกษียณ (ประกันบำนาญ + RMF รวมกันไม่เกิน 500,000 บาท)"
+  },
+  "taxRmf": {
+    "en": "RMF",
+    "th": "กองทุน RMF"
+  },
+  "taxRmfHelper": {
+    "en": "30% of income, max 500,000 THB — hold until age 55 (min 5 years)",
+    "th": "30% ของรายได้ สูงสุด 500,000 บาท — ถือครองจนอายุ 55 ปี (ไม่น้อยกว่า 5 ปี)"
+  },
+  "taxSsf": {
+    "en": "SSF",
+    "th": "กองทุน SSF"
+  },
+  "taxSsfHelper": {
+    "en": "30% of income, max 200,000 THB — hold 10 years",
+    "th": "30% ของรายได้ สูงสุด 200,000 บาท — ถือครอง 10 ปีเต็ม"
+  },
+  "taxThaiEsg": {
+    "en": "Thai ESG Fund",
+    "th": "กองทุน Thai ESG"
+  },
+  "taxThaiEsgHelper": {
+    "en": "30% of income, max 300,000 THB — hold 5 years (not in 500k combined cap)",
+    "th": "30% ของรายได้ สูงสุด 300,000 บาท — ถือครอง 5 ปีเต็ม (ไม่นับรวมในเพดาน 500,000 บาท)"
+  },
+  "taxGrossIncome": {
+    "en": "Gross Income",
+    "th": "รายได้รวม"
+  },
+  "taxTotalDeductions": {
+    "en": "Total Deductions",
+    "th": "ค่าลดหย่อนรวม"
+  },
+  "taxNetIncome": {
+    "en": "Net Taxable Income",
+    "th": "เงินได้สุทธิ"
+  },
+  "taxDue": {
+    "en": "Tax Due",
+    "th": "ภาษีที่ต้องจ่าย"
+  },
+  "taxYear2569": {
+    "en": "Tax Year 2569 (2026)",
+    "th": "ปีภาษี 2569"
+  },
+  "taxEffectiveRate": {
+    "en": "Effective Rate",
+    "th": "อัตราภาษีที่แท้จริง"
+  },
+  "taxDeductionsBreakdown": {
+    "en": "Deductions Breakdown",
+    "th": "รายละเอียดค่าลดหย่อน"
+  },
+  "taxDeductItem": {
+    "en": "Deduction",
+    "th": "รายการลดหย่อน"
+  },
+  "taxDeductCap": {
+    "en": "Cap / Note",
+    "th": "เพดาน / หมายเหตุ"
+  },
+  "taxDeductAmount": {
+    "en": "Applied",
+    "th": "ที่ใช้ได้"
+  },
+  "taxDeductEmployment": {
+    "en": "Employment income deduction",
+    "th": "ค่าใช้จ่ายเงินได้จากการจ้างแรงงาน"
+  },
+  "taxDeductEmploymentNote": {
+    "en": "50%, max 100,000",
+    "th": "50%, สูงสุด 100,000"
+  },
+  "taxDeductPersonal": {
+    "en": "Personal allowance",
+    "th": "ค่าลดหย่อนส่วนตัว"
+  },
+  "taxDeductSpouse": {
+    "en": "Spouse allowance",
+    "th": "ค่าลดหย่อนคู่สมรส"
+  },
+  "taxDeductChild": {
+    "en": "Child allowance",
+    "th": "ค่าลดหย่อนบุตร"
+  },
+  "taxDeductChildNote": {
+    "en": "30,000 / child",
+    "th": "30,000 / คน"
+  },
+  "taxDeductPregnancy": {
+    "en": "Pregnancy & childbirth",
+    "th": "ค่าฝากครรภ์และคลอดบุตร"
+  },
+  "taxDeductParent": {
+    "en": "Parent allowance",
+    "th": "ค่าลดหย่อนบิดา/มารดา"
+  },
+  "taxDeductDisabled": {
+    "en": "Disabled dependent",
+    "th": "ผู้พิการในความอุปการะ"
+  },
+  "taxDeductSocSec": {
+    "en": "Social Security",
+    "th": "ประกันสังคม"
+  },
+  "taxDeductHomeLoan": {
+    "en": "Home loan interest",
+    "th": "ดอกเบี้ยกู้เพื่อที่อยู่อาศัย"
+  },
+  "taxDeductLifeIns": {
+    "en": "Life insurance",
+    "th": "ประกันชีวิต"
+  },
+  "taxDeductHealthIns": {
+    "en": "Health insurance",
+    "th": "ประกันสุขภาพ"
+  },
+  "taxDeductPensionIns": {
+    "en": "Pension insurance",
+    "th": "ประกันชีวิตแบบบำนาญ"
+  },
+  "taxDeductRmf": {
+    "en": "RMF",
+    "th": "กองทุน RMF"
+  },
+  "taxDeductSsf": {
+    "en": "SSF",
+    "th": "กองทุน SSF"
+  },
+  "taxDeductThaiEsg": {
+    "en": "Thai ESG Fund",
+    "th": "กองทุน Thai ESG"
+  },
+  "taxDeductEduDonation": {
+    "en": "Education / sport / gov't hospital donation (2×)",
+    "th": "บริจาคการศึกษา/กีฬา/โรงพยาบาลรัฐ (2 เท่า)"
+  },
+  "taxDeductGenDonation": {
+    "en": "General donation",
+    "th": "เงินบริจาคทั่วไป"
+  },
+  "taxDeductMax9k": {
+    "en": "max 9,000",
+    "th": "สูงสุด 9,000"
+  },
+  "taxDeductMax25k": {
+    "en": "max 25,000",
+    "th": "สูงสุด 25,000"
+  },
+  "taxDeductMax60k": {
+    "en": "max 60,000",
+    "th": "สูงสุด 60,000"
+  },
+  "taxDeductMax100k": {
+    "en": "max 100,000",
+    "th": "สูงสุด 100,000"
+  },
+  "taxDeductMax200k": {
+    "en": "max 200,000",
+    "th": "สูงสุด 200,000"
+  },
+  "taxDeductMax300k": {
+    "en": "max 300,000",
+    "th": "สูงสุด 300,000"
+  },
+  "taxDeductMax500k": {
+    "en": "max 500,000",
+    "th": "สูงสุด 500,000"
+  },
+  "taxDeductDonationNote": {
+    "en": "combined ≤ 10% of net income",
+    "th": "รวมกันไม่เกิน 10% ของเงินได้สุทธิ"
+  },
+  "taxBracketBreakdown": {
+    "en": "Tax Bracket Breakdown",
+    "th": "รายละเอียดตามขั้นภาษี"
+  },
+  "taxBracketRange": {
+    "en": "Income Range (THB)",
+    "th": "ช่วงรายได้ (บาท)"
+  },
+  "taxBracketRate": {
+    "en": "Rate",
+    "th": "อัตรา"
+  },
+  "taxBracketTax": {
+    "en": "Tax",
+    "th": "ภาษี"
+  },
+  "taxTotal": {
+    "en": "Total",
+    "th": "รวม"
+  },
+  "navPortfolio": {
+    "en": "Portfolio",
+    "th": "พอร์ตโฟลิโอ"
+  },
+  "portfolioTitle": {
+    "en": "Portfolio Planner",
+    "th": "วางแผนพอร์ตโฟลิโอ"
+  },
+  "portfolioName": {
+    "en": "Portfolio Name",
+    "th": "ชื่อพอร์ตโฟลิโอ"
+  },
+  "portfolioAddStock": {
+    "en": "Add Stock",
+    "th": "เพิ่มหุ้น"
+  },
+  "portfolioStockName": {
+    "en": "Stock / Ticker",
+    "th": "ชื่อหุ้น / Ticker"
+  },
+  "portfolioAmount": {
+    "en": "Shares",
+    "th": "จำนวนหุ้น"
+  },
+  "portfolioAvgCost": {
+    "en": "Avg Cost",
+    "th": "ต้นทุนเฉลี่ย"
+  },
+  "portfolioCurrentPrice": {
+    "en": "Current Price",
+    "th": "ราคาปัจจุบัน"
+  },
+  "portfolioValue": {
+    "en": "Value",
+    "th": "มูลค่า"
+  },
+  "portfolioPL": {
+    "en": "P&L",
+    "th": "กำไร/ขาดทุน"
+  },
+  "portfolioPLPct": {
+    "en": "P&L %",
+    "th": "% กำไร/ขาดทุน"
+  },
+  "portfolioWeight": {
+    "en": "Weight",
+    "th": "สัดส่วน"
+  },
+  "portfolioTotalBalance": {
+    "en": "Total Balance",
+    "th": "มูลค่ารวม"
+  },
+  "portfolioTotalCost": {
+    "en": "Total Cost",
+    "th": "ต้นทุนรวม"
+  },
+  "portfolioTotalPL": {
+    "en": "Total P&L",
+    "th": "กำไร/ขาดทุนรวม"
+  },
+  "portfolioAllocation": {
+    "en": "Allocation",
+    "th": "การจัดสรร"
+  },
+  "portfolioEmpty": {
+    "en": "Add a stock to get started.",
+    "th": "เพิ่มหุ้นเพื่อเริ่มต้น"
+  },
+  "portfolioAddPortfolio": {
+    "en": "Add Portfolio",
+    "th": "เพิ่มพอร์ตโฟลิโอ"
+  },
+  "portfolioNewPortfolio": {
+    "en": "New Portfolio",
+    "th": "พอร์ตโฟลิโอใหม่"
+  },
+  "portfolioModeTracker": {
+    "en": "Tracker",
+    "th": "ติดตาม"
+  },
+  "portfolioModePlanner": {
+    "en": "Planner",
+    "th": "วางแผน"
+  },
+  "portfolioPlanTotalInvestment": {
+    "en": "Total Investment",
+    "th": "เงินลงทุนรวม"
+  },
+  "portfolioTargetPct": {
+    "en": "Target %",
+    "th": "% เป้าหมาย"
+  },
+  "portfolioRequiredAmount": {
+    "en": "Required Amount",
+    "th": "จำนวนที่ต้องลงทุน"
+  },
+  "portfolioTotalPct": {
+    "en": "Total %",
+    "th": "% รวม"
+  },
+  "portfolioPlanEmpty": {
+    "en": "Add a stock to start planning.",
+    "th": "เพิ่มหุ้นเพื่อเริ่มวางแผน"
+  },
+  "portfolioFetchPrice": {
+    "en": "Fetch latest price",
+    "th": "ดึงราคาล่าสุด"
+  },
+  "portfolioPriceError": {
+    "en": "Symbol not found",
+    "th": "ไม่พบสัญลักษณ์หุ้น"
+  }
 }

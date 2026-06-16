@@ -1,8 +1,8 @@
-import '@testing-library/jest-dom'
+import "@testing-library/jest-dom";
 
 // These mocks are only relevant in the jsdom (browser) test environment
-if (typeof window !== 'undefined') {
-  Object.defineProperty(window, 'matchMedia', {
+if (typeof window !== "undefined") {
+  Object.defineProperty(window, "matchMedia", {
     writable: true,
     value: jest.fn().mockImplementation((query: string) => ({
       matches: false,
@@ -14,13 +14,13 @@ if (typeof window !== 'undefined') {
       removeEventListener: jest.fn(),
       dispatchEvent: jest.fn(),
     })),
-  })
+  });
 
   global.ResizeObserver = class ResizeObserver {
     observe() {}
     unobserve() {}
     disconnect() {}
-  }
+  };
 
   Element.prototype.getBoundingClientRect = jest.fn(() => ({
     width: 1024,
@@ -32,5 +32,5 @@ if (typeof window !== 'undefined') {
     x: 0,
     y: 0,
     toJSON: () => ({}),
-  }))
+  }));
 }

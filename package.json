@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -39,6 +41,7 @@
     "husky": "^9.1.7",
     "jest": "^30.4.2",
     "jest-environment-jsdom": "^30.4.1",
+    "prettier": "3.8.4",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",
     "typescript": "^5"
