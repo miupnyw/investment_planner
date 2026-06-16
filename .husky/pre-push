@@ -1,0 +1,18 @@
+#!/bin/sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Use the Node version specified in .nvmrc
+nvm use
+
+# Run linting to ensure code quality before pushing as safety net check
+npm run lint
+
+# Run type checking before pushing as safety net check
+npm run typecheck
+
+# Run tests before pushing
+npm test
+
+# Run security audit to check for vulnerabilities before pushing
+npm audit --audit-level=high
