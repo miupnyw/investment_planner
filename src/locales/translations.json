@@ -75,6 +75,10 @@
     "en": "Home",
     "th": "หน้าหลัก"
   },
+  "navMenu": {
+    "en": "Open navigation menu",
+    "th": "เปิดเมนูนำทาง"
+  },
   "navDCA": {
     "en": "DCA Calculator",
     "th": "คำนวณ DCA"
@@ -220,8 +224,8 @@
     "th": "รวม"
   },
   "taxSectionFamily": {
-    "en": "Personal & Family",
-    "th": "ส่วนตัวและครอบครัว"
+    "en": "Spouse & Family",
+    "th": "คู่สมรสและครอบครัว"
   },
   "taxHasSpouse": {
     "en": "Spouse (registered, no income)",

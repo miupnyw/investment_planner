@@ -1,13 +1,16 @@
 import {
+  Box,
   Card,
   CardContent,
-  Divider,
   InputAdornment,
-  Stack,
   TextField,
   Typography,
 } from "@mui/material";
 import { useLanguage } from "@/context/LanguageContext";
+
+// minWidth: 0 lets grid items shrink below their content width instead of
+// overflowing the 3-column track.
+const fieldSx = { minWidth: 0 } as const;
 
 interface DCAInputsPanelProps {
   startAge: string;
@@ -59,47 +62,40 @@ export function DCAInputsPanel({
         <Typography variant="h6" sx={{ fontWeight: 700, mb: 3 }}>
           {t("dcaInputs")}
         </Typography>
-        <Stack spacing={3}>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "repeat(2, 1fr)", sm: "repeat(4, 1fr)" },
+            alignItems: "flex-start",
+            gap: 2,
+          }}
+        >
           <TextField
             label={t("dcaStartAge")}
             type="number"
             value={startAge}
             onChange={(e) => onStartAgeChange(e.target.value)}
             slotProps={{ htmlInput: { min: 1, max: 100 } }}
-            fullWidth
+            sx={fieldSx}
           />
           <TextField
             label={t("dcaEndAge")}
             type="number"
             value={endAge}
             onChange={(e) => onEndAgeChange(e.target.value)}
+            helperText={`${t("dcaTotalYears")}: ${investYears}`}
             slotProps={{ htmlInput: { min: 1, max: 100 } }}
-            fullWidth
+            sx={fieldSx}
           />
           <TextField
             label={t("dcaRetireAge")}
             type="number"
             value={retireAge}
             onChange={(e) => onRetireAgeChange(e.target.value)}
+            helperText={`${t("dcaCoastYears")}: ${coastYears}`}
             slotProps={{ htmlInput: { min: 1, max: 100 } }}
-            fullWidth
+            sx={fieldSx}
           />
-          <TextField
-            label={t("dcaTotalYears")}
-            value={investYears}
-            slotProps={{ input: { readOnly: true } }}
-            fullWidth
-            sx={{ "& .MuiInputBase-input": { color: "text.secondary" } }}
-          />
-          <TextField
-            label={t("dcaCoastYears")}
-            value={coastYears}
-            slotProps={{ input: { readOnly: true } }}
-            fullWidth
-            sx={{ "& .MuiInputBase-input": { color: "text.secondary" } }}
-          />
-
-          <Divider />
 
           <TextField
             label={t("dcaAnnualReturn")}
@@ -112,7 +108,7 @@ export function DCAInputsPanel({
                 endAdornment: <InputAdornment position="end">%</InputAdornment>,
               },
             }}
-            fullWidth
+            sx={fieldSx}
           />
           <TextField
             label={t("dcaStartPrincipal")}
@@ -127,7 +123,7 @@ export function DCAInputsPanel({
                 ),
               },
             }}
-            fullWidth
+            sx={fieldSx}
           />
           <TextField
             label={t("dcaMonthlyCost")}
@@ -142,10 +138,8 @@ export function DCAInputsPanel({
                 ),
               },
             }}
-            fullWidth
+            sx={fieldSx}
           />
-
-          <Divider />
 
           <TextField
             label={t("dcaWithdrawalRate")}
@@ -158,9 +152,9 @@ export function DCAInputsPanel({
                 endAdornment: <InputAdornment position="end">%</InputAdornment>,
               },
             }}
-            fullWidth
+            sx={fieldSx}
           />
-        </Stack>
+        </Box>
       </CardContent>
     </Card>
   );

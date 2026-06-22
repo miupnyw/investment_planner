@@ -1,17 +1,28 @@
+import { useState } from "react";
 import {
+  Box,
   Card,
   CardContent,
+  Collapse,
   Divider,
   FormControlLabel,
+  IconButton,
   InputAdornment,
   Stack,
   Switch,
   TextField,
   Typography,
 } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useLanguage } from "@/context/LanguageContext";
 import { IncomeItem, TaxInputs } from "@/lib/tax";
 import { IncomeList } from "./IncomeList";
+
+// minWidth: 0 lets grid items shrink into their track instead of overflowing.
+// Section labels, the income list, the spouse toggle and dividers span every
+// column to break the row between groups.
+const fieldSx = { minWidth: 0 } as const;
+const breakSx = { gridColumn: "1 / -1" } as const;
 
 interface TaxInputsPanelProps {
   inputs: TaxInputs;
@@ -29,7 +40,12 @@ function SectionLabel({ label }: { label: string }) {
     <Typography
       variant="caption"
       color="text.secondary"
-      sx={{ fontWeight: 600, textTransform: "uppercase", letterSpacing: 1 }}
+      sx={{
+        ...breakSx,
+        fontWeight: 600,
+        textTransform: "uppercase",
+        letterSpacing: 1,
+      }}
     >
       {label}
     </Typography>
@@ -73,7 +89,7 @@ function MoneyInput({
           ),
         },
       }}
-      fullWidth
+      sx={fieldSx}
     />
   );
 }
@@ -104,8 +120,60 @@ function CountInput({
       slotProps={{
         htmlInput: { min: 0, ...(max !== undefined ? { max } : {}) },
       }}
-      fullWidth
+      sx={fieldSx}
     />
+  );
+}
+
+function Section({
+  label,
+  children,
+  defaultOpen = false,
+}: {
+  label: string;
+  children: React.ReactNode;
+  defaultOpen?: boolean;
+}) {
+  const [open, setOpen] = useState(defaultOpen);
+  return (
+    <Box>
+      <Box
+        onClick={() => setOpen((prev) => !prev)}
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          cursor: "pointer",
+          py: 0.5,
+        }}
+      >
+        <SectionLabel label={label} />
+        <IconButton
+          size="small"
+          aria-expanded={open}
+          aria-label={label}
+          sx={{
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+            transition: (theme) => theme.transitions.create("transform"),
+          }}
+        >
+          <ExpandMoreIcon fontSize="small" />
+        </IconButton>
+      </Box>
+      <Collapse in={open} timeout="auto" unmountOnExit>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "repeat(2, 1fr)", sm: "repeat(4, 1fr)" },
+            alignItems: "flex-start",
+            gap: 2,
+            pt: 1.5,
+          }}
+        >
+          {children}
+        </Box>
+      </Collapse>
+    </Box>
   );
 }
 
@@ -120,6 +188,7 @@ export function TaxInputsPanel({
   onIncomeChange,
 }: TaxInputsPanelProps) {
   const { t } = useLanguage();
+  const [expanded, setExpanded] = useState(true);
 
   return (
     <Card
@@ -127,164 +196,174 @@ export function TaxInputsPanel({
       sx={{ border: 1, borderColor: "divider", borderRadius: 3 }}
     >
       <CardContent>
-        <Typography variant="h6" sx={{ fontWeight: 700, mb: 3 }}>
-          {t("taxInputs")}
-        </Typography>
-        <Stack spacing={3}>
-          {/* Income */}
-          <SectionLabel label={t("taxAnnualIncome")} />
-          <IncomeList
-            items={inputs.incomeItems}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={onIncomeChange}
-          />
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            cursor: "pointer",
+            mb: expanded ? 3 : 0,
+          }}
+        >
+          <Typography variant="h6" sx={{ fontWeight: 700 }}>
+            {t("taxInputs")}
+          </Typography>
+        </Box>
+          <Stack divider={<Divider />} spacing={1}>
+            {/* Income */}
+            <Section label={t("taxAnnualIncome")} defaultOpen>
+              <Box sx={breakSx}>
+                <IncomeList
+                  items={inputs.incomeItems}
+                  symbol={symbol}
+                  toDisplay={toDisplay}
+                  toTHB={toTHB}
+                  onChange={onIncomeChange}
+                />
+              </Box>
+            </Section>
 
-          <Divider />
-
-          {/* Personal & Family */}
-          <SectionLabel label={t("taxSectionFamily")} />
-          <FormControlLabel
-            control={
-              <Switch
-                checked={inputs.hasSpouse}
-                onChange={(e) => onChange({ hasSpouse: e.target.checked })}
+            {/* Personal & Family */}
+            <Section label={t("taxSectionFamily")}>
+              <FormControlLabel
+                sx={breakSx}
+                control={
+                  <Switch
+                    checked={inputs.hasSpouse}
+                    onChange={(e) => onChange({ hasSpouse: e.target.checked })}
+                  />
+                }
+                label={t("taxHasSpouse")}
               />
-            }
-            label={t("taxHasSpouse")}
-          />
-          <CountInput
-            label={t("taxNumChildren")}
-            value={inputs.numChildren}
-            helper={t("taxChildHelper")}
-            onChange={(v) => onChange({ numChildren: v })}
-          />
-          <CountInput
-            label={t("taxNumChildren2ndPlus")}
-            value={inputs.numChildren2ndPlus}
-            helper={t("taxChildren2ndPlusHelper")}
-            onChange={(v) => onChange({ numChildren2ndPlus: v })}
-          />
-          <MoneyInput
-            label={t("taxPregnancy")}
-            thbValue={inputs.pregnancyExpense}
-            helper={t("taxPregnancyHelper")}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ pregnancyExpense: v })}
-          />
-          <CountInput
-            label={t("taxNumParents")}
-            value={inputs.numParents}
-            helper={t("taxParentHelper")}
-            max={4}
-            onChange={(v) => onChange({ numParents: v })}
-          />
-          <CountInput
-            label={t("taxNumDisabled")}
-            value={inputs.numDisabled}
-            helper={t("taxDisabledHelper")}
-            onChange={(v) => onChange({ numDisabled: v })}
-          />
+              <CountInput
+                label={t("taxNumChildren")}
+                value={inputs.numChildren}
+                helper={t("taxChildHelper")}
+                onChange={(v) => onChange({ numChildren: v })}
+              />
+              <CountInput
+                label={t("taxNumChildren2ndPlus")}
+                value={inputs.numChildren2ndPlus}
+                helper={t("taxChildren2ndPlusHelper")}
+                onChange={(v) => onChange({ numChildren2ndPlus: v })}
+              />
+              <MoneyInput
+                label={t("taxPregnancy")}
+                thbValue={inputs.pregnancyExpense}
+                helper={t("taxPregnancyHelper")}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ pregnancyExpense: v })}
+              />
+              <CountInput
+                label={t("taxNumParents")}
+                value={inputs.numParents}
+                helper={t("taxParentHelper")}
+                max={4}
+                onChange={(v) => onChange({ numParents: v })}
+              />
+              <CountInput
+                label={t("taxNumDisabled")}
+                value={inputs.numDisabled}
+                helper={t("taxDisabledHelper")}
+                onChange={(v) => onChange({ numDisabled: v })}
+              />
+            </Section>
 
-          <Divider />
+            {/* Donations & Home loan */}
+            <Section label={t("taxSectionDonations")}>
+              <MoneyInput
+                label={t("taxHomeLoan")}
+                thbValue={inputs.homeLoanInterest}
+                helper={t("taxHomeLoanHelper")}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ homeLoanInterest: v })}
+              />
+              <MoneyInput
+                label={t("taxEduDonation")}
+                thbValue={inputs.eduDonation}
+                helper={`${t("taxEduDonationHelper")} — ${t("taxDonationCapLabel")} ${fmt(donationCap)}`}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ eduDonation: v })}
+              />
+              <MoneyInput
+                label={t("taxGeneralDonation")}
+                thbValue={inputs.generalDonation}
+                helper={`${t("taxGeneralDonationHelper")} — ${t("taxDonationCapLabel")} ${fmt(donationCap)}`}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ generalDonation: v })}
+              />
+            </Section>
 
-          {/* Donations & Home loan */}
-          <SectionLabel label={t("taxSectionDonations")} />
-          <MoneyInput
-            label={t("taxHomeLoan")}
-            thbValue={inputs.homeLoanInterest}
-            helper={t("taxHomeLoanHelper")}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ homeLoanInterest: v })}
-          />
-          <MoneyInput
-            label={t("taxEduDonation")}
-            thbValue={inputs.eduDonation}
-            helper={`${t("taxEduDonationHelper")} — ${t("taxDonationCapLabel")} ${fmt(donationCap)}`}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ eduDonation: v })}
-          />
-          <MoneyInput
-            label={t("taxGeneralDonation")}
-            thbValue={inputs.generalDonation}
-            helper={`${t("taxGeneralDonationHelper")} — ${t("taxDonationCapLabel")} ${fmt(donationCap)}`}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ generalDonation: v })}
-          />
+            {/* Insurance */}
+            <Section label={t("taxInsurance")}>
+              <MoneyInput
+                label={t("taxSocialSecurity")}
+                thbValue={inputs.socialSecurity}
+                helper={t("taxSocSecHelper")}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ socialSecurity: v })}
+              />
+              <MoneyInput
+                label={t("taxLifeInsurance")}
+                thbValue={inputs.lifeInsurance}
+                helper={t("taxLifeInsHelper")}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ lifeInsurance: v })}
+              />
+              <MoneyInput
+                label={t("taxHealthInsurance")}
+                thbValue={inputs.healthInsurance}
+                helper={t("taxHealthInsHelper")}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ healthInsurance: v })}
+              />
+              <MoneyInput
+                label={t("taxPensionInsurance")}
+                thbValue={inputs.pensionInsurance}
+                helper={t("taxPensionInsHelper")}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ pensionInsurance: v })}
+              />
+            </Section>
 
-          <Divider />
-
-          {/* Insurance */}
-          <SectionLabel label={t("taxInsurance")} />
-          <MoneyInput
-            label={t("taxSocialSecurity")}
-            thbValue={inputs.socialSecurity}
-            helper={t("taxSocSecHelper")}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ socialSecurity: v })}
-          />
-          <MoneyInput
-            label={t("taxLifeInsurance")}
-            thbValue={inputs.lifeInsurance}
-            helper={t("taxLifeInsHelper")}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ lifeInsurance: v })}
-          />
-          <MoneyInput
-            label={t("taxHealthInsurance")}
-            thbValue={inputs.healthInsurance}
-            helper={t("taxHealthInsHelper")}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ healthInsurance: v })}
-          />
-          <MoneyInput
-            label={t("taxPensionInsurance")}
-            thbValue={inputs.pensionInsurance}
-            helper={t("taxPensionInsHelper")}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ pensionInsurance: v })}
-          />
-
-          <Divider />
-
-          {/* Retirement funds */}
-          <SectionLabel label={t("taxFunds")} />
-          <MoneyInput
-            label={t("taxRmf")}
-            thbValue={inputs.rmf}
-            helper={t("taxRmfHelper")}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ rmf: v })}
-          />
-          <MoneyInput
-            label={t("taxThaiEsg")}
-            thbValue={inputs.thaiEsg}
-            helper={t("taxThaiEsgHelper")}
-            symbol={symbol}
-            toDisplay={toDisplay}
-            toTHB={toTHB}
-            onChange={(v) => onChange({ thaiEsg: v })}
-          />
-        </Stack>
+            {/* Retirement funds */}
+            <Section label={t("taxFunds")}>
+              <MoneyInput
+                label={t("taxRmf")}
+                thbValue={inputs.rmf}
+                helper={t("taxRmfHelper")}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ rmf: v })}
+              />
+              <MoneyInput
+                label={t("taxThaiEsg")}
+                thbValue={inputs.thaiEsg}
+                helper={t("taxThaiEsgHelper")}
+                symbol={symbol}
+                toDisplay={toDisplay}
+                toTHB={toTHB}
+                onChange={(v) => onChange({ thaiEsg: v })}
+              />
+            </Section>
+          </Stack>
       </CardContent>
     </Card>
   );
