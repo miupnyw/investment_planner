@@ -1,6 +1,7 @@
 # Investment Planner
 
-A web app for planning investments and estimating taxes, built with [Next.js](https://nextjs.org). It offers a Dollar-Cost Averaging (DCA) projection tool and a Thailand personal income tax calculator, with bilingual (English / Thai), multi-currency, and dark/light theme support.
+A web app for planning investments and estimating taxes, built with [Next.js](https://nextjs.org). It offers a Dollar-Cost Averaging (DCA) projection tool and a Thailand personal income tax calculator, with bilingual (English / Thai), multi-currency, and dark/light theme support. 
+🔗 **Live Demo:** [investment-planner-steel.vercel.app](https://investment-planner-steel.vercel.app)
 
 ## Features
 
