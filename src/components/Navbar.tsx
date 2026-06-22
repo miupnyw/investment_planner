@@ -75,7 +75,7 @@ export default function Navbar() {
             <Box
               component={Link}
               href="/"
-              aria-label={t("navHome")}
+              aria-label={t("appTitle")}
               sx={{ display: "flex", alignItems: "center", gap: 1 }}
             >
               <TrendingUpIcon color="primary" />
@@ -148,7 +148,7 @@ export default function Navbar() {
           <Box
             component={Link}
             href="/"
-            aria-label={t("navHome")}
+            aria-label={t("appTitle")}
             onClick={() => setDrawerOpen(false)}
             sx={{
               display: "flex",
