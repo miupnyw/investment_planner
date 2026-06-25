@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useSyncExternalStore } from "react";
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
 import { useCurrency } from "@/context/CurrencyContext";
@@ -142,81 +142,75 @@ export default function DCAPage() {
           </Typography>
         </Stack>
 
-        <Grid container spacing={4}>
-          <Grid size={{ xs: 12, md: 4 }}>
-            <DCAInputsPanel
-              startAge={startAge}
-              endAge={endAge}
-              retireAge={retireAge}
-              annualReturn={annualReturn}
-              startPrincipalDisplay={startPrincipalDisplay}
-              monthlyDCADisplay={monthlyDCADisplay}
-              withdrawalRate={withdrawalRate}
-              investYears={investYears}
-              coastYears={coastYears}
-              symbol={symbol}
-              onStartAgeChange={(v) => update({ startAge: v })}
-              onEndAgeChange={(v) => update({ endAge: v })}
-              onRetireAgeChange={(v) => update({ retireAge: v })}
-              onAnnualReturnChange={(v) => update({ annualReturn: v })}
-              onStartPrincipalChange={(raw) =>
-                update({
-                  startPrincipalTHB:
-                    raw === ""
-                      ? ""
-                      : String(Math.round(toTHB(parseFloat(raw) || 0))),
-                })
-              }
-              onMonthlyDCAChange={(raw) =>
-                update({
-                  monthlyDCABase:
-                    raw === ""
-                      ? ""
-                      : String(Math.round(toTHB(parseFloat(raw) || 0))),
-                })
-              }
-              onWithdrawalRateChange={(v) => update({ withdrawalRate: v })}
+        <Stack spacing={4}>
+          <DCAInputsPanel
+            startAge={startAge}
+            endAge={endAge}
+            retireAge={retireAge}
+            annualReturn={annualReturn}
+            startPrincipalDisplay={startPrincipalDisplay}
+            monthlyDCADisplay={monthlyDCADisplay}
+            withdrawalRate={withdrawalRate}
+            investYears={investYears}
+            coastYears={coastYears}
+            symbol={symbol}
+            onStartAgeChange={(v) => update({ startAge: v })}
+            onEndAgeChange={(v) => update({ endAge: v })}
+            onRetireAgeChange={(v) => update({ retireAge: v })}
+            onAnnualReturnChange={(v) => update({ annualReturn: v })}
+            onStartPrincipalChange={(raw) =>
+              update({
+                startPrincipalTHB:
+                  raw === ""
+                    ? ""
+                    : String(Math.round(toTHB(parseFloat(raw) || 0))),
+              })
+            }
+            onMonthlyDCAChange={(raw) =>
+              update({
+                monthlyDCABase:
+                  raw === ""
+                    ? ""
+                    : String(Math.round(toTHB(parseFloat(raw) || 0))),
+              })
+            }
+            onWithdrawalRateChange={(v) => update({ withdrawalRate: v })}
+          />
+
+          <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
+            <StatCard
+              label={t("dcaTotalPrincipal")}
+              value={fmt(result.totalPrincipal)}
             />
-          </Grid>
+            <StatCard
+              label={t("dcaTotalProfit")}
+              value={fmt(result.totalProfit)}
+              color="success.main"
+            />
+            <StatCard
+              label={t("dcaTotalBalance")}
+              value={fmt(result.totalBalance)}
+              color="primary.main"
+            />
+          </Stack>
 
-          <Grid size={{ xs: 12, md: 8 }}>
-            <Stack spacing={4}>
-              <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-                <StatCard
-                  label={t("dcaTotalPrincipal")}
-                  value={fmt(result.totalPrincipal)}
-                />
-                <StatCard
-                  label={t("dcaTotalProfit")}
-                  value={fmt(result.totalProfit)}
-                  color="success.main"
-                />
-                <StatCard
-                  label={t("dcaTotalBalance")}
-                  value={fmt(result.totalBalance)}
-                  color="primary.main"
-                />
-              </Stack>
+          <DCAChart
+            data={chartData}
+            currentYear={currentYear}
+            retireYear={retireYear}
+            coastStartYear={coastStartYear}
+            coastYears={coastYears}
+            fmt={fmt}
+          />
 
-              <DCAChart
-                data={chartData}
-                currentYear={currentYear}
-                retireYear={retireYear}
-                coastStartYear={coastStartYear}
-                coastYears={coastYears}
-                fmt={fmt}
-              />
-
-              <DCAPassiveIncomeCard
-                monthlyPassiveIncome={monthlyPassiveIncome}
-                annualPassiveIncome={annualPassiveIncome}
-                totalBalance={result.totalBalance}
-                retireAge={retireAgeNum}
-                fmt={fmt}
-              />
-            </Stack>
-          </Grid>
-        </Grid>
+          <DCAPassiveIncomeCard
+            monthlyPassiveIncome={monthlyPassiveIncome}
+            annualPassiveIncome={annualPassiveIncome}
+            totalBalance={result.totalBalance}
+            retireAge={retireAgeNum}
+            fmt={fmt}
+          />
+        </Stack>
       </Container>
 
       <Box

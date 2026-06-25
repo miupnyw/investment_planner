@@ -1,5 +1,15 @@
 #!/bin/sh
+# Skip validation for merge commits (MERGE_HEAD exists during a merge, and
+# auto-generated merge messages start with "Merge").
+if [ -f "$(git rev-parse --git-dir 2>/dev/null)/MERGE_HEAD" ]; then
+  exit 0
+fi
+
 commit_msg=$(cat "$1")
+case "$commit_msg" in
+  "Merge "*) exit 0 ;;
+esac
+
 pattern="^(feat|fix|docs|style|refactor|test|chore|task|build|ci|perf|revert): .+"
 
 if ! echo "$commit_msg" | grep -qE "$pattern"; then

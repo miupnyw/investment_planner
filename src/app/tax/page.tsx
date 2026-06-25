@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Box, Container, Grid, Stack, Typography } from "@mui/material";
+import { Box, Container, Stack, Typography } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
 import { useCurrency } from "@/context/CurrencyContext";
@@ -60,39 +60,33 @@ export default function TaxPage() {
           </Typography>
         </Stack>
 
-        <Grid container spacing={4}>
-          <Grid size={{ xs: 12, md: 4 }}>
-            <TaxInputsPanel
-              inputs={inputs}
-              symbol={symbol}
-              toDisplay={toDisplay}
-              toTHB={toTHB}
-              donationCap={result.donationCap}
-              fmt={fmt}
-              onChange={patch}
-              onIncomeChange={handleIncomeChange}
-            />
-          </Grid>
+        <Stack spacing={4}>
+          <TaxInputsPanel
+            inputs={inputs}
+            symbol={symbol}
+            toDisplay={toDisplay}
+            toTHB={toTHB}
+            donationCap={result.donationCap}
+            fmt={fmt}
+            onChange={patch}
+            onIncomeChange={handleIncomeChange}
+          />
 
-          <Grid size={{ xs: 12, md: 8 }}>
-            <Stack spacing={4}>
-              <TaxSummaryCards
-                grossIncome={result.grossIncome}
-                totalDeductions={result.deductions.total}
-                netIncome={result.netIncome}
-                totalTax={result.totalTax}
-                effectiveRate={result.effectiveRate}
-                fmt={fmt}
-              />
-              <TaxDeductionsTable deductions={result.deductions} fmt={fmt} />
-              <TaxBreakdownTable
-                brackets={result.brackets}
-                totalTax={result.totalTax}
-                fmt={fmt}
-              />
-            </Stack>
-          </Grid>
-        </Grid>
+          <TaxSummaryCards
+            grossIncome={result.grossIncome}
+            totalDeductions={result.deductions.total}
+            netIncome={result.netIncome}
+            totalTax={result.totalTax}
+            effectiveRate={result.effectiveRate}
+            fmt={fmt}
+          />
+          <TaxDeductionsTable deductions={result.deductions} fmt={fmt} />
+          <TaxBreakdownTable
+            brackets={result.brackets}
+            totalTax={result.totalTax}
+            fmt={fmt}
+          />
+        </Stack>
       </Container>
 
       <Box
