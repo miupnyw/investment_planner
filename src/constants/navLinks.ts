@@ -31,8 +31,8 @@ export const NAV_LINKS: NavItem[] = [
     labelKey: "navFinance",
     icon: AccountBalanceWalletIcon,
     children: [
-      { href: "/dca", labelKey: "navDCA", icon: TrendingUpIcon },
-      { href: "/tax", labelKey: "navTax", icon: ReceiptLongIcon },
+      { href: "/finance/dca", labelKey: "navDCA", icon: TrendingUpIcon },
+      { href: "/finance/tax", labelKey: "navTax", icon: ReceiptLongIcon },
     ],
   },
   { href: "/work", labelKey: "navWork", icon: WorkIcon },

@@ -1,9 +1,9 @@
 import { screen } from "@testing-library/react";
 import { renderWithProviders } from "../../utils/test-utils";
-import DCAPage from "@/app/dca/page";
+import DCAPage from "@/app/finance/dca/page";
 
 jest.mock("next/navigation", () => ({
-  usePathname: jest.fn().mockReturnValue("/dca"),
+  usePathname: jest.fn().mockReturnValue("/finance/dca"),
 }));
 
 beforeEach(() => {
