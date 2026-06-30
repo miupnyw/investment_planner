@@ -183,6 +183,42 @@
     "en": "Tax Calculator",
     "th": "คำนวณภาษี"
   },
+  "navFinance": {
+    "en": "Finance",
+    "th": "การเงิน"
+  },
+  "navWork": {
+    "en": "Work & Career",
+    "th": "การงาน/อาชีพ"
+  },
+  "navHealth": {
+    "en": "Health",
+    "th": "สุขภาพ"
+  },
+  "navRelationships": {
+    "en": "Relationships",
+    "th": "ความสัมพันธ์"
+  },
+  "navLearning": {
+    "en": "Learning",
+    "th": "การเรียนรู้"
+  },
+  "navMind": {
+    "en": "Mind & Emotion",
+    "th": "จิตใจ/อารมณ์"
+  },
+  "navRecreation": {
+    "en": "Recreation",
+    "th": "นันทนาการ"
+  },
+  "navEnvironment": {
+    "en": "Environment",
+    "th": "สภาพแวดล้อม"
+  },
+  "comingSoon": {
+    "en": "Coming soon",
+    "th": "เร็วๆ นี้"
+  },
   "taxTitle": {
     "en": "Thailand Income Tax 2569",
     "th": "ภาษีเงินได้บุคคลธรรมดา 2569"
