@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { fireEvent, screen } from "@testing-library/react";
 import { renderWithProviders } from "../utils/test-utils";
 import Navbar from "@/components/Navbar";
 
@@ -21,9 +21,25 @@ afterEach(() => {
 describe("Navbar", () => {
   it("renders all navigation links", () => {
     renderWithProviders(<Navbar />);
-    expect(screen.getByRole("link", { name: /home/i })).toBeInTheDocument();
     expect(
-      screen.getByRole("link", { name: /dca calculator/i }),
+      screen.getByRole("button", { name: /finance/i }),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: /health/i })).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /environment/i }),
+    ).toBeInTheDocument();
+  });
+
+  it("opens the DCA and Tax calculators as a submenu of Finance", () => {
+    renderWithProviders(<Navbar />);
+
+    fireEvent.click(screen.getByRole("button", { name: /finance/i }));
+
+    expect(
+      screen.getByRole("menuitem", { name: /dca calculator/i }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("menuitem", { name: /tax calculator/i }),
     ).toBeInTheDocument();
   });
 
@@ -53,12 +69,12 @@ describe("Navbar", () => {
     ).toBeInTheDocument();
   });
 
-  it("active nav link has the path that matches usePathname", () => {
+  it("marks the Finance parent active when a calculator sub-route is open", () => {
     const { usePathname } = jest.requireMock("next/navigation");
     usePathname.mockReturnValue("/dca");
     renderWithProviders(<Navbar />);
-    const dcaLink = screen.getByRole("link", { name: /dca calculator/i });
-    // active link rendered with primary color (fontWeight 700)
-    expect(dcaLink).toBeInTheDocument();
+    const financeButton = screen.getByRole("button", { name: /finance/i });
+    // active parent rendered with primary color (fontWeight 700)
+    expect(financeButton).toBeInTheDocument();
   });
 });
