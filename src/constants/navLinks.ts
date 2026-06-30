@@ -3,10 +3,8 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import WorkIcon from "@mui/icons-material/Work";
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import PeopleIcon from "@mui/icons-material/People";
-import SchoolIcon from "@mui/icons-material/School";
 import SelfImprovementIcon from "@mui/icons-material/SelfImprovement";
 import BeachAccessIcon from "@mui/icons-material/BeachAccess";
-import ParkIcon from "@mui/icons-material/Park";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
 
@@ -23,27 +21,29 @@ export type NavItem = {
   children?: NavChild[];
 };
 
-// Top-level "Wheel of Life" areas shown in the navbar. Finance holds the
-// calculators as a submenu.
+// Top-level life areas shown in the navbar. Financial holds the calculators as
+// a submenu.
 export const NAV_LINKS: NavItem[] = [
   {
     href: "/finance",
-    labelKey: "navFinance",
+    labelKey: "navFinancial",
     icon: AccountBalanceWalletIcon,
     children: [
       { href: "/finance/dca", labelKey: "navDCA", icon: TrendingUpIcon },
       { href: "/finance/tax", labelKey: "navTax", icon: ReceiptLongIcon },
     ],
   },
-  { href: "/work", labelKey: "navWork", icon: WorkIcon },
+  { href: "/career", labelKey: "navCareer", icon: WorkIcon },
   { href: "/health", labelKey: "navHealth", icon: HealthAndSafetyIcon },
   {
     href: "/relationships",
     labelKey: "navRelationships",
     icon: PeopleIcon,
   },
-  { href: "/learning", labelKey: "navLearning", icon: SchoolIcon },
-  { href: "/mind", labelKey: "navMind", icon: SelfImprovementIcon },
-  { href: "/recreation", labelKey: "navRecreation", icon: BeachAccessIcon },
-  { href: "/environment", labelKey: "navEnvironment", icon: ParkIcon },
+  {
+    href: "/personal-growth",
+    labelKey: "navPersonalGrowth",
+    icon: SelfImprovementIcon,
+  },
+  { href: "/leisure", labelKey: "navLeisure", icon: BeachAccessIcon },
 ];

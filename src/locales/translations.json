@@ -183,13 +183,13 @@
     "en": "Tax Calculator",
     "th": "คำนวณภาษี"
   },
-  "navFinance": {
+  "navFinancial": {
     "en": "Finance",
     "th": "การเงิน"
   },
-  "navWork": {
-    "en": "Work & Career",
-    "th": "การงาน/อาชีพ"
+  "navCareer": {
+    "en": "Career",
+    "th": "อาชีพการงาน"
   },
   "navHealth": {
     "en": "Health",
@@ -199,21 +199,13 @@
     "en": "Relationships",
     "th": "ความสัมพันธ์"
   },
-  "navLearning": {
-    "en": "Learning",
-    "th": "การเรียนรู้"
+  "navPersonalGrowth": {
+    "en": "Personal Growth",
+    "th": "การพัฒนาตนเอง"
   },
-  "navMind": {
-    "en": "Mind & Emotion",
-    "th": "จิตใจ/อารมณ์"
-  },
-  "navRecreation": {
-    "en": "Recreation",
-    "th": "นันทนาการ"
-  },
-  "navEnvironment": {
-    "en": "Environment",
-    "th": "สภาพแวดล้อม"
+  "navLeisure": {
+    "en": "Leisure",
+    "th": "การพักผ่อน"
   },
   "comingSoon": {
     "en": "Coming soon",
