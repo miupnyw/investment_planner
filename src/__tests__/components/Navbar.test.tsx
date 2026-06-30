@@ -71,7 +71,7 @@ describe("Navbar", () => {
 
   it("marks the Finance parent active when a calculator sub-route is open", () => {
     const { usePathname } = jest.requireMock("next/navigation");
-    usePathname.mockReturnValue("/dca");
+    usePathname.mockReturnValue("/finance/dca");
     renderWithProviders(<Navbar />);
     const financeButton = screen.getByRole("button", { name: /finance/i });
     // active parent rendered with primary color (fontWeight 700)
