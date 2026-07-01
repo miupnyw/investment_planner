@@ -207,6 +207,118 @@
     "en": "Leisure",
     "th": "การพักผ่อน"
   },
+  "wheelTitle": {
+    "en": "Your Wheel of Life",
+    "th": "วงล้อชีวิตของคุณ"
+  },
+  "wheelSubtitle": {
+    "en": "A snapshot of all six life areas — see which are thriving and which need attention.",
+    "th": "ภาพรวมของทั้ง 6 ด้านในชีวิต — ดูว่าด้านไหนแข็งแรงและด้านไหนต้องดูแล"
+  },
+  "wheelScoreLabel": {
+    "en": "Score",
+    "th": "คะแนน"
+  },
+  "wheelOverall": {
+    "en": "Overall balance",
+    "th": "ความสมดุลโดยรวม"
+  },
+  "wheelOverallCaption": {
+    "en": "Average across all six areas",
+    "th": "ค่าเฉลี่ยจากทั้ง 6 ด้าน"
+  },
+  "wheelRatingLow": {
+    "en": "Needs work",
+    "th": "ต้องปรับปรุง"
+  },
+  "wheelRatingMedium": {
+    "en": "Fair",
+    "th": "พอใช้"
+  },
+  "wheelRatingHigh": {
+    "en": "Excellent",
+    "th": "ดีมาก"
+  },
+  "wheelStrongest": {
+    "en": "Strongest area",
+    "th": "ด้านที่แข็งแรงที่สุด"
+  },
+  "wheelNeedsAttention": {
+    "en": "Needs attention",
+    "th": "ด้านที่ต้องดูแล"
+  },
+  "wheelRangeLabel": {
+    "en": "Date range",
+    "th": "ช่วงเวลา"
+  },
+  "wheelRange1w": {
+    "en": "1W",
+    "th": "1W"
+  },
+  "wheelRange1m": {
+    "en": "1M",
+    "th": "1M"
+  },
+  "wheelRange3m": {
+    "en": "3M",
+    "th": "3M"
+  },
+  "wheelRange6m": {
+    "en": "6M",
+    "th": "6M"
+  },
+  "wheelRangeYtd": {
+    "en": "YTD",
+    "th": "YTD"
+  },
+  "wheelRangeAll": {
+    "en": "ALL",
+    "th": "ALL"
+  },
+  "wheelThisWeek": {
+    "en": "This week's review",
+    "th": "รีวิวประจำสัปดาห์นี้"
+  },
+  "wheelSaveReview": {
+    "en": "Save this week",
+    "th": "บันทึกสัปดาห์นี้"
+  },
+  "wheelReviewIncomplete": {
+    "en": "Rate all areas to save",
+    "th": "ให้คะแนนครบทุกด้านเพื่อบันทึก"
+  },
+  "wheelAddReview": {
+    "en": "Add this week's review",
+    "th": "เพิ่มรีวิวประจำสัปดาห์นี้"
+  },
+  "wheelEditReview": {
+    "en": "Edit this week's review",
+    "th": "แก้ไขรีวิวประจำสัปดาห์นี้"
+  },
+  "wheelNoteLabel": {
+    "en": "Notes",
+    "th": "บันทึกเพิ่มเติม"
+  },
+  "wheelNotePlaceholder": {
+    "en": "What went well this week? What would you like to improve?",
+    "th": "สัปดาห์นี้เป็นอย่างไรบ้าง? อยากปรับปรุงอะไร?"
+  },
+  "cancel": {
+    "en": "Cancel",
+    "th": "ยกเลิก"
+  },
+  "wheelBasedOn": {
+    "en": "Based on",
+    "th": "จาก"
+  },
+  "wheelReviewsWord": {
+    "en": "weekly reviews",
+    "th": "รีวิวรายสัปดาห์"
+  },
+  "wheelEmpty": {
+    "en": "No reviews in this range yet — save your first weekly review below.",
+    "th": "ยังไม่มีรีวิวในช่วงนี้ — บันทึกรีวิวรายสัปดาห์แรกของคุณด้านล่าง"
+  },
   "comingSoon": {
     "en": "Coming soon",
     "th": "เร็วๆ นี้"

@@ -23,45 +23,16 @@ describe("Home page", () => {
     renderWithProviders(<Home />);
   });
 
-  it("renders the hero headline", () => {
+  it("renders the Wheel of Life dashboard", () => {
+    renderWithProviders(<Home />);
+    expect(screen.getByText("Your Wheel of Life")).toBeInTheDocument();
+  });
+
+  it("renders the weekly review call-to-action", () => {
     renderWithProviders(<Home />);
     expect(
-      screen.getByText("Take Control of Your Financial Future"),
+      screen.getByRole("button", { name: /this week's review/i }),
     ).toBeInTheDocument();
-  });
-
-  it("renders the hero subtitle", () => {
-    renderWithProviders(<Home />);
-    expect(
-      screen.getByText(/track portfolios, set goals/i),
-    ).toBeInTheDocument();
-  });
-
-  it("renders Get Started buttons", () => {
-    renderWithProviders(<Home />);
-    expect(
-      screen.getAllByRole("button", { name: /get started/i }),
-    ).not.toHaveLength(0);
-  });
-
-  it("renders the features section title", () => {
-    renderWithProviders(<Home />);
-    expect(
-      screen.getByText("Everything You Need to Invest Smarter"),
-    ).toBeInTheDocument();
-  });
-
-  it("renders all four feature card titles", () => {
-    renderWithProviders(<Home />);
-    expect(screen.getByText("Portfolio Tracking")).toBeInTheDocument();
-    expect(screen.getByText("Goal Planning")).toBeInTheDocument();
-    expect(screen.getByText("Risk Analysis")).toBeInTheDocument();
-    expect(screen.getByText("Smart Insights")).toBeInTheDocument();
-  });
-
-  it("renders the CTA banner", () => {
-    renderWithProviders(<Home />);
-    expect(screen.getByText("Ready to Start Investing?")).toBeInTheDocument();
   });
 
   it("renders the footer", () => {
