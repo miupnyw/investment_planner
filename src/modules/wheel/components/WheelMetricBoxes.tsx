@@ -17,7 +17,7 @@ import {
   WHEEL_AREAS,
   type ScoreLevel,
   type WheelScores,
-} from "@/lib/wheelOfLife";
+} from "@/modules/wheel/wheelOfLife";
 import { AREA_ICONS } from "../areaIcons";
 
 interface WheelMetricBoxesProps {

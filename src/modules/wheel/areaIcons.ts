@@ -5,7 +5,7 @@ import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
 import PeopleIcon from "@mui/icons-material/People";
 import SelfImprovementIcon from "@mui/icons-material/SelfImprovement";
 import BeachAccessIcon from "@mui/icons-material/BeachAccess";
-import type { AreaId } from "@/lib/wheelOfLife";
+import type { AreaId } from "@/modules/wheel/wheelOfLife";
 
 // Icon per life area, mirroring the navbar. Kept in the UI layer so the pure
 // scoring logic in wheelOfLife.ts stays free of MUI imports.

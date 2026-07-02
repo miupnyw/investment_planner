@@ -14,7 +14,7 @@ import {
   MAX_SCORE,
   WHEEL_AREAS,
   type WheelScores,
-} from "@/lib/wheelOfLife";
+} from "@/modules/wheel/wheelOfLife";
 
 interface WheelRadarChartProps {
   scores: WheelScores;

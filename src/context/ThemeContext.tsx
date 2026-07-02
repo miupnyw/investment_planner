@@ -8,7 +8,7 @@ import {
 } from "react";
 import { ThemeProvider as MuiThemeProvider, CssBaseline } from "@mui/material";
 import { lightTheme, darkTheme } from "@/lib/theme";
-import { notifyStorage, subscribeStorage } from "@/lib/persistentStore";
+import { notifyStorage, subscribeStorage } from "@/store/persistentStore";
 
 // Define the shape of our theme context value
 type ThemeMode = "light" | "dark";

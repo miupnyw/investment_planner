@@ -2,7 +2,7 @@
 
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useLanguage } from "@/context/LanguageContext";
-import { DATE_RANGES, type DateRangeId } from "@/lib/wheelOfLife";
+import { DATE_RANGES, type DateRangeId } from "@/modules/wheel/wheelOfLife";
 
 interface WheelRangeSelectorProps {
   value: DateRangeId;

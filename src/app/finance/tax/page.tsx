@@ -1,53 +1,23 @@
 "use client";
 
-import { useMemo, useState } from "react";
 import { Box, Container, Stack, Typography } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
 import { useCurrency } from "@/context/CurrencyContext";
-import { computeTax, IncomeItem, TaxInputs } from "@/lib/tax";
+import { useTaxCalculator } from "@/hooks/useTaxCalculator";
 import { TaxInputsPanel } from "@/modules/tax/components/TaxInputsPanel";
 import { TaxSummaryCards } from "@/modules/tax/components/TaxSummaryCards";
 import { TaxDeductionsTable } from "@/modules/tax/components/TaxDeductionsTable";
 import { TaxBreakdownTable } from "@/modules/tax/components/TaxBreakdownTable";
 
-const DEFAULTS: TaxInputs = {
-  incomeItems: [{ id: "1", note: "", amountTHB: 600_000 }],
-  hasSpouse: false,
-  numChildren: 0,
-  numChildren2ndPlus: 0,
-  pregnancyExpense: 0,
-  numParents: 0,
-  numDisabled: 0,
-  socialSecurity: 9_000,
-  homeLoanInterest: 0,
-  lifeInsurance: 0,
-  healthInsurance: 0,
-  pensionInsurance: 0,
-  rmf: 0,
-  thaiEsg: 0,
-  generalDonation: 0,
-  eduDonation: 0,
-};
-
 export default function TaxPage() {
   const { t } = useLanguage();
   const { fmt, symbol, toTHB, toDisplay } = useCurrency();
 
-  const [inputs, setInputs] = useState<TaxInputs>(DEFAULTS);
-
-  function patch(p: Partial<TaxInputs>) {
-    setInputs((prev) => ({ ...prev, ...p }));
-  }
-
-  function handleIncomeChange(items: IncomeItem[]) {
-    patch({ incomeItems: items });
-  }
-
-  const result = useMemo(() => computeTax(inputs), [inputs]);
+  const { inputs, patch, handleIncomeChange, result } = useTaxCalculator();
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
       <Navbar />
 
       <Container maxWidth="lg" sx={{ py: 6, flex: 1 }}>
@@ -88,20 +58,6 @@ export default function TaxPage() {
           />
         </Stack>
       </Container>
-
-      <Box
-        component="footer"
-        sx={{
-          py: 3,
-          textAlign: "center",
-          borderTop: 1,
-          borderColor: "divider",
-        }}
-      >
-        <Typography variant="body2" color="text.secondary">
-          © {new Date().getFullYear()} {t("appTitle")} — {t("footerRights")}
-        </Typography>
-      </Box>
     </Box>
   );
 }

@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
-import { IncomeItem } from "@/lib/tax";
+import { IncomeItem } from "@/modules/tax/tax";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface IncomeListProps {

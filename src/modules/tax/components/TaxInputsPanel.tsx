@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { useLanguage } from "@/context/LanguageContext";
-import { IncomeItem, TaxInputs } from "@/lib/tax";
+import { IncomeItem, TaxInputs } from "@/modules/tax/tax";
 import { IncomeList } from "./IncomeList";
 
 // minWidth: 0 lets grid items shrink into their track instead of overflowing.

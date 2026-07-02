@@ -8,7 +8,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { TaxBracket } from "@/lib/tax";
+import { TaxBracket } from "@/modules/tax/tax";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface TaxBreakdownTableProps {

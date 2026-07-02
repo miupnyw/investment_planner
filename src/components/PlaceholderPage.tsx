@@ -10,7 +10,7 @@ export default function PlaceholderPage({ titleKey }: { titleKey: string }) {
   const { t } = useLanguage();
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
+    <Box sx={{ display: "flex", flexDirection: "column", flex: 1 }}>
       <Navbar />
 
       <Container maxWidth="lg" sx={{ py: 6, flex: 1 }}>
@@ -23,20 +23,6 @@ export default function PlaceholderPage({ titleKey }: { titleKey: string }) {
           </Typography>
         </Stack>
       </Container>
-
-      <Box
-        component="footer"
-        sx={{
-          py: 3,
-          textAlign: "center",
-          borderTop: 1,
-          borderColor: "divider",
-        }}
-      >
-        <Typography variant="body2" color="text.secondary">
-          © {new Date().getFullYear()} {t("appTitle")} — {t("footerRights")}
-        </Typography>
-      </Box>
     </Box>
   );
 }

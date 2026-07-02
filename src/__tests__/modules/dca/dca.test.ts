@@ -1,4 +1,4 @@
-import { computeDCA } from "@/lib/dca";
+import { computeDCA } from "@/modules/dca/dca";
 
 describe("computeDCA", () => {
   it("includes year 0 as the first data point with the start principal", () => {

@@ -8,7 +8,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { TaxDeductions } from "@/lib/tax";
+import { TaxDeductions } from "@/modules/tax/tax";
 import { useLanguage } from "@/context/LanguageContext";
 
 interface TaxDeductionsTableProps {

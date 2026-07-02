@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import SaveIcon from "@mui/icons-material/Save";
 import { useLanguage } from "@/context/LanguageContext";
-import type { AreaId } from "@/lib/wheelOfLife";
+import type { AreaId } from "@/modules/wheel/wheelOfLife";
 import { WheelScoreEditor, type DraftScores } from "./WheelScoreEditor";
 
 interface WheelReviewModalProps {

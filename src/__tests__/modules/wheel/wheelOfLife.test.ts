@@ -15,7 +15,7 @@ import {
   weakestArea,
   type WeeklyReview,
   type WheelScores,
-} from "@/lib/wheelOfLife";
+} from "@/modules/wheel/wheelOfLife";
 
 // Helper to build a full score set from a partial override.
 function scores(overrides: Partial<WheelScores> = {}): WheelScores {
