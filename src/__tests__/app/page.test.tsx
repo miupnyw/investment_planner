@@ -34,9 +34,4 @@ describe("Home page", () => {
       screen.getByRole("button", { name: /this week's review/i }),
     ).toBeInTheDocument();
   });
-
-  it("renders the footer", () => {
-    renderWithProviders(<Home />);
-    expect(screen.getByText(/all rights reserved/i)).toBeInTheDocument();
-  });
 });

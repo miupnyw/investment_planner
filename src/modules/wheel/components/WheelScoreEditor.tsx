@@ -7,7 +7,7 @@ import {
   scoreLevel,
   WHEEL_AREAS,
   type AreaId,
-} from "@/modules/wheel/wheelOfLife";
+} from "../wheelOfLife";
 import { AREA_ICONS } from "../areaIcons";
 
 // A draft allows "not yet rated" (null) per area, shown as "-".

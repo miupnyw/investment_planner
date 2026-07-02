@@ -16,8 +16,8 @@ import {
   type AreaId,
   type WeeklyReview,
   type WheelScores,
-} from "@/modules/wheel/wheelOfLife";
-import type { DraftScores } from "@/modules/wheel/components/WheelScoreEditor";
+} from "../wheelOfLife";
+import type { DraftScores } from "../components/WheelScoreEditor";
 
 // A fresh review starts with every area unrated. Module-level so the reference
 // stays stable across renders (the seed-reset below relies on identity).

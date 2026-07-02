@@ -12,7 +12,7 @@ import {
 } from "@mui/material";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 import { useLanguage } from "@/context/LanguageContext";
-import { useWheelDashboard } from "@/hooks/useWheelDashboard";
+import { useWheelDashboard } from "../hooks/useWheelDashboard";
 import { WheelMetricBoxes } from "./WheelMetricBoxes";
 import { WheelRadarChart } from "./WheelRadarChart";
 import { WheelRangeSelector } from "./WheelRangeSelector";
@@ -68,7 +68,7 @@ export function WheelOfLifeDashboard() {
             size="large"
             startIcon={<EditNoteIcon />}
             onClick={() => setModalOpen(true)}
-            sx={{ borderRadius: 8, px: 4, flexShrink: 0 }}
+            sx={{ px: 4, flexShrink: 0 }}
           >
             {hasThisWeekReview ? t("wheelEditReview") : t("wheelAddReview")}
           </Button>

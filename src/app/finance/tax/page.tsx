@@ -4,7 +4,7 @@ import { Box, Container, Stack, Typography } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
 import { useCurrency } from "@/context/CurrencyContext";
-import { useTaxCalculator } from "@/hooks/useTaxCalculator";
+import { useTaxCalculator } from "@/modules/tax/hooks/useTaxCalculator";
 import { TaxInputsPanel } from "@/modules/tax/components/TaxInputsPanel";
 import { TaxSummaryCards } from "@/modules/tax/components/TaxSummaryCards";
 import { TaxDeductionsTable } from "@/modules/tax/components/TaxDeductionsTable";

@@ -3,7 +3,7 @@
 import { Box, Container, Stack, Typography } from "@mui/material";
 import Navbar from "@/components/Navbar";
 import { useLanguage } from "@/context/LanguageContext";
-import { useDcaPlanner } from "@/hooks/useDcaPlanner";
+import { useDcaPlanner } from "@/modules/dca/hooks/useDcaPlanner";
 import { StatCard } from "@/modules/dca/components/StatCard";
 import { DCAInputsPanel } from "@/modules/dca/components/DCAInputsPanel";
 import { DCAChart } from "@/modules/dca/components/DCAChart";
